@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/courier_main_navigation"
+    app:startDestination="@id/courierHomeFragment">
+
+    <fragment
+        android:id="@+id/courierHomeFragment"
+        android:name="com.washathomes.Views.Main.Courier.Home.CourierHomeFragment"
+        android:label="fragment_courier_home"
+        tools:layout="@layout/fragment_courier_home" >
+        <action
+            android:id="@+id/action_courierHomeFragment_to_orderPlacedFragment2"
+            app:destination="@id/orderPlacedFragment2" />
+        <action
+            android:id="@+id/action_courierHomeFragment_to_orderPlacedOverviewFragment2"
+            app:destination="@id/orderPlacedOverviewFragment2" />
+        <action
+            android:id="@+id/action_courierHomeFragment_to_courierNotificationsFragment"
+            app:destination="@id/courierNotificationsFragment" />
+        <action
+            android:id="@+id/action_courierHomeFragment_to_orderDeliveredFragment2"
+            app:destination="@id/orderDeliveredFragment2" />
+        <action
+            android:id="@+id/action_courierHomeFragment_to_orderInProgressFragment3"
+            app:destination="@id/orderInProgressFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderPlacedFragment2"
+        android:name="com.washathomes.Views.Main.Courier.Home.OrderPlaced.OrderPlacedFragment"
+        android:label="fragment_order_placed3"
+        tools:layout="@layout/fragment_order_placed3" />
+    <fragment
+        android:id="@+id/orderPlacedOverviewFragment2"
+        android:name="com.washathomes.Views.Main.Courier.Home.OrderPlaced.OrderPlacedOverviewFragment"
+        android:label="fragment_order_placed_overview2"
+        tools:layout="@layout/fragment_order_placed_overview2" >
+        <argument
+            android:name="isPending"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_orderPlacedOverviewFragment2_to_viewItemsFragment2"
+            app:destination="@id/viewItemsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewItemsFragment2"
+        android:name="com.washathomes.Views.Main.Courier.Home.ViewItems.ViewItemsFragment"
+        android:label="fragment_view_items2"
+        tools:layout="@layout/fragment_view_items2" >
+        <argument
+            android:name="isPending"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/courierWalletFragment"
+        android:name="com.washathomes.Views.Main.Courier.Wallet.CourierWalletFragment"
+        android:label="fragment_courier_wallet"
+        tools:layout="@layout/fragment_courier_wallet" />
+    <fragment
+        android:id="@+id/courierMoreFragment"
+        android:name="com.washathomes.Views.Main.Courier.More.CourierMoreFragment"
+        android:label="fragment_courier_more"
+        tools:layout="@layout/fragment_courier_more" >
+        <action
+            android:id="@+id/action_courierMoreFragment_to_courierProfileFragment"
+            app:destination="@id/courierProfileFragment" />
+        <action
+            android:id="@+id/action_courierMoreFragment_to_courierAvailabilityFragment"
+            app:destination="@id/courierAvailabilityFragment" />
+        <action
+            android:id="@+id/action_courierMoreFragment_to_settingsFragment2"
+            app:destination="@id/settingsFragment2" />
+        <action
+            android:id="@+id/action_courierMoreFragment_to_courierOrderHistoryFragment"
+            app:destination="@id/courierOrderHistoryFragment" />
+        <action
+            android:id="@+id/action_courierMoreFragment_to_webViewFragment2"
+            app:destination="@id/webViewFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/courierProfileFragment"
+        android:name="com.washathomes.Views.Main.Courier.More.Profile.CourierProfileFragment"
+        android:label="fragment_courier_profile"
+        tools:layout="@layout/fragment_courier_profile" >
+        <action
+            android:id="@+id/action_courierProfileFragment_to_courierSwitchLanguageFragment"
+            app:destination="@id/courierSwitchLanguageFragment" />
+        <action
+            android:id="@+id/action_courierProfileFragment_to_courierProfileDetailsFragment"
+            app:destination="@id/courierProfileDetailsFragment" />
+        <action
+            android:id="@+id/action_courierProfileFragment_to_courierSwitchAccountFragment"
+            app:destination="@id/courierSwitchAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/courierAvailabilityFragment"
+        android:name="com.washathomes.Views.Main.Courier.More.Availability.CourierAvailabilityFragment"
+        android:label="fragment_courier_availability"
+        tools:layout="@layout/fragment_courier_availability" />
+    <fragment
+        android:id="@+id/settingsFragment2"
+        android:name="com.washathomes.Views.Main.Courier.More.Settings.SettingsFragment"
+        android:label="fragment_settings2"
+        tools:layout="@layout/fragment_settings2" >
+        <action
+            android:id="@+id/action_settingsFragment2_to_deliveryServiceFragment"
+            app:destination="@id/deliveryServiceFragment" />
+        <action
+            android:id="@+id/action_settingsFragment2_to_courierIdentificationFragment"
+            app:destination="@id/courierIdentificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/courierOrderHistoryFragment"
+        android:name="com.washathomes.Views.Main.Courier.More.OrderHistory.CourierOrderHistoryFragment"
+        android:label="fragment_courier_order_history"
+        tools:layout="@layout/fragment_courier_order_history" >
+        <action
+            android:id="@+id/action_courierOrderHistoryFragment_to_courierOrderDetailsFragment"
+            app:destination="@id/courierOrderDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment2"
+        android:name="com.washathomes.Views.Main.Courier.More.WebView.WebViewFragment"
+        android:label="fragment_web_view2"
+        tools:layout="@layout/fragment_web_view2" >
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/courierNotificationsFragment"
+        android:name="com.washathomes.Views.Main.Courier.Notifications.CourierNotificationsFragment"
+        android:label="fragment_courier_notifications"
+        tools:layout="@layout/fragment_courier_notifications" />
+    <fragment
+        android:id="@+id/orderDeliveredFragment2"
+        android:name="com.washathomes.Views.Main.Courier.Home.OrderDelivered.OrderDeliveredFragment"
+        android:label="fragment_order_delivered2"
+        tools:layout="@layout/fragment_order_delivered2" >
+        <action
+            android:id="@+id/action_orderDeliveredFragment2_to_orderReviewFragment3"
+            app:destination="@id/orderReviewFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderInProgressFragment3"
+        android:name="com.washathomes.Views.Main.Courier.Home.OrderInProgress.OrderInProgressFragment"
+        android:label="fragment_order_in_progress3"
+        tools:layout="@layout/fragment_order_in_progress3" />
+    <fragment
+        android:id="@+id/orderReviewFragment3"
+        android:name="com.washathomes.Views.Main.Courier.Home.OrderReview.OrderReviewFragment"
+        android:label="fragment_order_review3"
+        tools:layout="@layout/fragment_order_review3" />
+    <fragment
+        android:id="@+id/courierSwitchLanguageFragment"
+        android:name="com.washathomes.Views.Main.Courier.More.Profile.Language.CourierSwitchLanguageFragment"
+        android:label="fragment_courier_switch_language"
+        tools:layout="@layout/fragment_courier_switch_language" />
+    <fragment
+        android:id="@+id/courierProfileDetailsFragment"
+        android:name="com.washathomes.Views.Main.Courier.More.Profile.ProfileDetails.CourierProfileDetailsFragment"
+        android:label="fragment_courier_profile_details"
+        tools:layout="@layout/fragment_courier_profile_details" />
+    <fragment
+        android:id="@+id/courierSwitchAccountFragment"
+        android:name="com.washathomes.Views.Main.Courier.More.Profile.SwitchAccount.CourierSwitchAccountFragment"
+        android:label="fragment_courier_switch_account"
+        tools:layout="@layout/fragment_courier_switch_account" />
+    <fragment
+        android:id="@+id/courierIdentificationFragment"
+        android:name="com.washathomes.Views.Main.Courier.More.Settings.Identification.CourierIdentificationFragment"
+        android:label="fragment_courier_identification"
+        tools:layout="@layout/fragment_courier_identification" />
+    <fragment
+        android:id="@+id/deliveryServiceFragment"
+        android:name="com.washathomes.Views.Main.Courier.More.Settings.DeliveryService.DeliveryServiceFragment"
+        android:label="fragment_delivery_service"
+        tools:layout="@layout/fragment_delivery_service" />
+    <fragment
+        android:id="@+id/courierOrderDetailsFragment"
+        android:name="com.washathomes.Views.Main.Courier.More.OrderHistory.CourierOrderDetailsFragment"
+        android:label="fragment_courier_order_details"
+        tools:layout="@layout/fragment_courier_order_details" >
+        <action
+            android:id="@+id/action_courierOrderDetailsFragment_to_courierViewItemsFragment"
+            app:destination="@id/courierViewItemsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/courierViewItemsFragment"
+        android:name="com.washathomes.Views.Main.Courier.More.OrderHistory.CourierViewItemsFragment"
+        android:label="fragment_courier_view_items"
+        tools:layout="@layout/fragment_courier_view_items" />
+
+</navigation>

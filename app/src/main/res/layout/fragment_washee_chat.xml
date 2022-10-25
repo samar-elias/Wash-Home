@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Views.Main.Washee.Chats.WasheeChatFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chat_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            app:layout_constraintBottom_toTopOf="@id/chat_message_edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/item_chat" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/chat_message_edit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/rounded_bordered_white"
+            android:hint="@string/chat_message_hint"
+            android:importantForAutofill="no"
+            android:inputType="textCapSentences|textMultiLine|textNoSuggestions"
+            android:maxLength="300"
+            android:maxLines="5"
+            android:padding="@dimen/_8sdp"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/chat_send_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp"
+            android:textColorHint="@color/black_trans30"
+            android:fontFamily="@font/gotham_rounded_book"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:background="@color/black_trans10"
+            app:layout_constraintBottom_toBottomOf="@id/chat_message_edit"
+            app:layout_constraintEnd_toStartOf="@id/chat_send_btn"
+            app:layout_constraintTop_toTopOf="@id/chat_message_edit" />
+
+        <ImageButton
+            android:id="@+id/chat_send_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/rounded_view_white"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_send_icon"
+            app:layout_constraintBottom_toBottomOf="@id/chat_message_edit"
+            app:layout_constraintEnd_toEndOf="@id/chat_message_edit"
+            tools:ignore="ContentDescription"
+            app:tint="@color/chat_balloon_background_theirs" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

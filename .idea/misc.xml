@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/drawable/add_to_basket_draw.xml" value="0.1245" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/drawable/custom_rating_bar.xml" value="0.1" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/drawable/ic_circle_right.xml" value="0.192" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/drawable/ic_empty_inbox.xml" value="0.1435" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/drawable/ic_hourglass.xml" value="0.145" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/drawable/ic_send_icon.xml" value="0.192" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/drawable/light_gray_border.xml" value="0.144" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/drawable/off_white_radius.xml" value="0.1245" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/drawable/order_status_bullet.xml" value="0.192" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/drawable/order_status_bullet_blue.xml" value="0.1" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/drawable/order_status_bullet_green.xml" value="0.1355" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/drawable/order_status_bullet_grey.xml" value="0.1355" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/drawable/order_status_bullet_red.xml" value="0.1355" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/drawable/rectangle_view_gray_solid_transparent.xml" value="0.1" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/drawable/rounded_bordered_white.xml" value="0.192" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/drawable/rounded_view_light_gray_radius.xml" value="0.1" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/drawable/rounded_view_white.xml" value="0.192" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/drawable/tab_home.xml" value="0.1465" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/drawable/white_radius.xml" value="0.192" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/accept_order_popup.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/active_order_item.xml" value="0.5" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/active_order_item_layout.xml" value="0.1527777777777778" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/active_order_layout.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/activity_courier_main.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/activity_maps.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/activity_washer_main.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/dropped_off_order_popup.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/dropped_off_order_to_washer_popup.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/finish_order_popup.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_basket.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_courier_availability.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_courier_driving_data.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_courier_home.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_courier_identification.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_courier_more.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_courier_notifications.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_courier_order_details.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_courier_order_history.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_courier_profile.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_courier_profile_details.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_courier_switch_account.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_courier_switch_language.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_courier_view_items.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_courier_wallet.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_delivery_info.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_delivery_service.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_identification.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_language_selection.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_manage_services.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_more.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_order_accepted.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_order_accepted2.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_order_completed.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_order_confirmed.xml" value="0.22" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_order_delivered.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_order_delivered2.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_order_details.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_order_details2.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_order_history.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_order_in_progress.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_order_in_progress2.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_order_in_progress3.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_order_placed.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_order_placed2.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_order_placed3.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_order_placed_overview.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_order_placed_overview2.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_order_review.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_order_review2.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_order_review3.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_orders.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_overview.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_payment.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_pickup_return.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_profile_details.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_settings.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_settings2.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_switch_account.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_view_items.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_view_items2.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_view_order_items.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washee_chat.xml" value="0.22" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washee_chats.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washee_home.xml" value="0.22" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washee_notifications.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washer_availability.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washer_chats.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washer_driving_data.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washer_home.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washer_more.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washer_notifications.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washer_order_details.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washer_order_history.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washer_profile.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washer_profile_details.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washer_services_data.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washer_sign_up.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washer_switch_accounts.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washer_switch_language.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washer_view_items.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washer_view_order_items.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washer_wallet.xml" value="0.22" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_washer_web_view.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/fragment_web_view2.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/image_slider_layout.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/item_chat.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/item_inbox.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/item_incoming_content.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/item_incoming_title.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/item_layout.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/item_notification.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/order_item_layout.xml" value="0.22" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/pending_order_item.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/pending_order_layout.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/pick_up_order_from_washer_popup.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/pick_up_order_popup.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/reject_order_popup.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/service_item_layout.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/toolbar_layout.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/washer_order_item_layout.xml" value="0.1527777777777778" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/layout/washer_toolbar_layout.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/menu/courier_menu.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/menu/washee_menu.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/New Package/WasheHome/app/src/main/res/menu/washer_menu.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/add_to_basket_draw.xml" value="0.192" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/ic_chat_active.xml" value="0.1135" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/ic_time_clock.xml" value="0.1" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/light_gray_border.xml" value="0.1355" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/order_status_bullet.xml" value="0.192" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/oval_carnation_background.xml" value="0.108" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/pay_with_google.xml" value="0.1345" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/rectangle_view_gray_solid_transparent.xml" value="0.1155" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/right_arrow.xml" value="0.192" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/rounded_btn.xml" value="0.1" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/rounded_button.xml" value="0.192" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/rounded_view_blue_radius.xml" value="0.1" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/rounded_view_light_gray_radius.xml" value="0.192" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/rounded_view_white.xml" value="0.1045" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/search_bar.xml" value="0.14" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/tab_home.xml" value="0.1135" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/tab_orders.xml" value="0.192" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/tab_wallet.xml" value="0.1" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/track_selector.xml" value="0.17" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/view_items_background.xml" value="0.1025" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/view_overlined.xml" value="0.1" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/view_underlined.xml" value="0.14" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/view_underlined_light.xml" value="0.192" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/view_white_bg_blue_border_low_radius.xml" value="0.192" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/drawable/view_white_bg_blue_inactive_border_low_radius.xml" value="0.192" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/activity_courier_registration.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/activity_maps.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/activity_washee_main.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/activity_washer_main.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/basket_item_layout.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/category_item_layout.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/empty_basket_layout.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_account_types.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_basket.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_courier_intro.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_courier_sign_up.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_delivery_info.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_home.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_language_selection.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_more.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_order_completed.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_order_confirmed.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_order_details.xml" value="0.22" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_order_history.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_order_in_progress.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_order_placed.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_orders.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_overview.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_payment.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_phone_language.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_profile.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_profile_details.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_switch_account.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_verification.xml" value="0.17962962962962964" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_view_items.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_view_order_items.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_washee_home.xml" value="0.22" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_washee_intro.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_washee_sign_up.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_washer_availability.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_washer_driving_data.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_washer_home.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_washer_intro.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_washer_more.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_washer_order_history.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_washer_profile.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_washer_services_data.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_washer_sign_up.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_washer_switch_accounts.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_washer_web_view.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/fragment_web_view.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/image_slider_layout.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/intro_slider_layout.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/item_layout.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/item_review.xml" value="0.22" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/language_spinner_item.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/order_history_layout.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/order_item_layout.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/service_item_layout.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/service_layout.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/spinner_item.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/toolbar_layout.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/washer_order_item_layout.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/layout/washer_toolbar_layout.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/menu/washer_menu.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
