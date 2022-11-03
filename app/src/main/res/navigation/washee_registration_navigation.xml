@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/washeeIntroFragment"
-        android:name="com.washathomes.Views.Registration.WasheeRegistration.WasheeIntroFragment"
+        android:name="com.washathomes.views.registration.washeeregistration.WasheeIntroFragment"
         android:label="fragment_washee_intro"
         tools:layout="@layout/fragment_washee_intro" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/washeeSignUpFragment"
-        android:name="com.washathomes.Views.Registration.WasheeRegistration.WasheeSignUpFragment"
+        android:name="com.washathomes.views.registration.washeeregistration.WasheeSignUpFragment"
         android:label="fragment_washee_sign_up"
         tools:layout="@layout/fragment_washee_sign_up" />
 </navigation>

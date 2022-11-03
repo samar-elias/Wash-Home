@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    tools:context=".Views.Registration.WasherRegistration.WasherServicesDataFragment">
+    tools:context=".views.registration.washerregistration.WasherServicesDataFragment">
 
     <ScrollView
         android:id="@+id/services_layout"

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/phoneLanguageFragment"
-        android:name="com.washathomes.Views.Introduction.PhoneLanguageFragment"
+        android:name="com.washathomes.views.introduction.PhoneLanguageFragment"
         android:label="fragment_phone_language"
         tools:layout="@layout/fragment_phone_language" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/verificationFragment"
-        android:name="com.washathomes.Views.Introduction.VerificationFragment"
+        android:name="com.washathomes.views.introduction.VerificationFragment"
         android:label="fragment_verification"
         tools:layout="@layout/fragment_verification" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/accountTypesFragment"
-        android:name="com.washathomes.Views.Introduction.AccountTypesFragment"
+        android:name="com.washathomes.views.introduction.AccountTypesFragment"
         android:label="fragment_account_types"
         tools:layout="@layout/fragment_account_types" />
 </navigation>

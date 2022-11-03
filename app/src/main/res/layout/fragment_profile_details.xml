@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    tools:context=".Views.Main.Washee.More.Profile.ProfileDetails.ProfileDetailsFragment">
+    tools:context=".views.main.washee.more.profile.profiledetails.ProfileDetailsFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_layout"

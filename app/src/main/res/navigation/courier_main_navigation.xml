@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/courierHomeFragment"
-        android:name="com.washathomes.Views.Main.Courier.Home.CourierHomeFragment"
+        android:name="com.washathomes.views.main.courier.home.CourierHomeFragment"
         android:label="fragment_courier_home"
         tools:layout="@layout/fragment_courier_home" >
         <action
@@ -28,12 +28,12 @@
     </fragment>
     <fragment
         android:id="@+id/orderPlacedFragment2"
-        android:name="com.washathomes.Views.Main.Courier.Home.OrderPlaced.OrderPlacedFragment"
+        android:name="com.washathomes.views.main.courier.home.orderplaced.OrderPlacedFragment"
         android:label="fragment_order_placed3"
         tools:layout="@layout/fragment_order_placed3" />
     <fragment
         android:id="@+id/orderPlacedOverviewFragment2"
-        android:name="com.washathomes.Views.Main.Courier.Home.OrderPlaced.OrderPlacedOverviewFragment"
+        android:name="com.washathomes.views.main.courier.home.orderplaced.OrderPlacedOverviewFragment"
         android:label="fragment_order_placed_overview2"
         tools:layout="@layout/fragment_order_placed_overview2" >
         <argument
@@ -45,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/viewItemsFragment2"
-        android:name="com.washathomes.Views.Main.Courier.Home.ViewItems.ViewItemsFragment"
+        android:name="com.washathomes.views.main.courier.home.viewitems.ViewItemsFragment"
         android:label="fragment_view_items2"
         tools:layout="@layout/fragment_view_items2" >
         <argument
@@ -54,12 +54,12 @@
     </fragment>
     <fragment
         android:id="@+id/courierWalletFragment"
-        android:name="com.washathomes.Views.Main.Courier.Wallet.CourierWalletFragment"
+        android:name="com.washathomes.views.main.courier.wallet.CourierWalletFragment"
         android:label="fragment_courier_wallet"
         tools:layout="@layout/fragment_courier_wallet" />
     <fragment
         android:id="@+id/courierMoreFragment"
-        android:name="com.washathomes.Views.Main.Courier.More.CourierMoreFragment"
+        android:name="com.washathomes.views.main.courier.more.CourierMoreFragment"
         android:label="fragment_courier_more"
         tools:layout="@layout/fragment_courier_more" >
         <action
@@ -80,7 +80,7 @@
     </fragment>
     <fragment
         android:id="@+id/courierProfileFragment"
-        android:name="com.washathomes.Views.Main.Courier.More.Profile.CourierProfileFragment"
+        android:name="com.washathomes.views.main.courier.more.profile.CourierProfileFragment"
         android:label="fragment_courier_profile"
         tools:layout="@layout/fragment_courier_profile" >
         <action
@@ -95,12 +95,12 @@
     </fragment>
     <fragment
         android:id="@+id/courierAvailabilityFragment"
-        android:name="com.washathomes.Views.Main.Courier.More.Availability.CourierAvailabilityFragment"
+        android:name="com.washathomes.views.main.courier.more.availability.CourierAvailabilityFragment"
         android:label="fragment_courier_availability"
         tools:layout="@layout/fragment_courier_availability" />
     <fragment
         android:id="@+id/settingsFragment2"
-        android:name="com.washathomes.Views.Main.Courier.More.Settings.SettingsFragment"
+        android:name="com.washathomes.views.main.courier.more.settings.SettingsFragment"
         android:label="fragment_settings2"
         tools:layout="@layout/fragment_settings2" >
         <action
@@ -112,7 +112,7 @@
     </fragment>
     <fragment
         android:id="@+id/courierOrderHistoryFragment"
-        android:name="com.washathomes.Views.Main.Courier.More.OrderHistory.CourierOrderHistoryFragment"
+        android:name="com.washathomes.views.main.courier.more.orderhistory.CourierOrderHistoryFragment"
         android:label="fragment_courier_order_history"
         tools:layout="@layout/fragment_courier_order_history" >
         <action
@@ -121,7 +121,7 @@
     </fragment>
     <fragment
         android:id="@+id/webViewFragment2"
-        android:name="com.washathomes.Views.Main.Courier.More.WebView.WebViewFragment"
+        android:name="com.washathomes.views.main.courier.more.webView.WebViewFragment"
         android:label="fragment_web_view2"
         tools:layout="@layout/fragment_web_view2" >
         <argument
@@ -130,12 +130,12 @@
     </fragment>
     <fragment
         android:id="@+id/courierNotificationsFragment"
-        android:name="com.washathomes.Views.Main.Courier.Notifications.CourierNotificationsFragment"
+        android:name="com.washathomes.views.main.courier.notifications.CourierNotificationsFragment"
         android:label="fragment_courier_notifications"
         tools:layout="@layout/fragment_courier_notifications" />
     <fragment
         android:id="@+id/orderDeliveredFragment2"
-        android:name="com.washathomes.Views.Main.Courier.Home.OrderDelivered.OrderDeliveredFragment"
+        android:name="com.washathomes.views.main.courier.home.orderdelivered.OrderDeliveredFragment"
         android:label="fragment_order_delivered2"
         tools:layout="@layout/fragment_order_delivered2" >
         <action
@@ -144,42 +144,42 @@
     </fragment>
     <fragment
         android:id="@+id/orderInProgressFragment3"
-        android:name="com.washathomes.Views.Main.Courier.Home.OrderInProgress.OrderInProgressFragment"
+        android:name="com.washathomes.views.main.courier.home.orderInprogress.OrderInProgressFragment"
         android:label="fragment_order_in_progress3"
         tools:layout="@layout/fragment_order_in_progress3" />
     <fragment
         android:id="@+id/orderReviewFragment3"
-        android:name="com.washathomes.Views.Main.Courier.Home.OrderReview.OrderReviewFragment"
+        android:name="com.washathomes.views.main.courier.home.orderreview.OrderReviewFragment"
         android:label="fragment_order_review3"
         tools:layout="@layout/fragment_order_review3" />
     <fragment
         android:id="@+id/courierSwitchLanguageFragment"
-        android:name="com.washathomes.Views.Main.Courier.More.Profile.Language.CourierSwitchLanguageFragment"
+        android:name="com.washathomes.views.main.courier.more.profile.language.CourierSwitchLanguageFragment"
         android:label="fragment_courier_switch_language"
         tools:layout="@layout/fragment_courier_switch_language" />
     <fragment
         android:id="@+id/courierProfileDetailsFragment"
-        android:name="com.washathomes.Views.Main.Courier.More.Profile.ProfileDetails.CourierProfileDetailsFragment"
+        android:name="com.washathomes.views.main.courier.more.profile.profiledetails.CourierProfileDetailsFragment"
         android:label="fragment_courier_profile_details"
         tools:layout="@layout/fragment_courier_profile_details" />
     <fragment
         android:id="@+id/courierSwitchAccountFragment"
-        android:name="com.washathomes.Views.Main.Courier.More.Profile.SwitchAccount.CourierSwitchAccountFragment"
+        android:name="com.washathomes.views.main.courier.more.profile.switchaccount.CourierSwitchAccountFragment"
         android:label="fragment_courier_switch_account"
         tools:layout="@layout/fragment_courier_switch_account" />
     <fragment
         android:id="@+id/courierIdentificationFragment"
-        android:name="com.washathomes.Views.Main.Courier.More.Settings.Identification.CourierIdentificationFragment"
+        android:name="com.washathomes.views.main.courier.more.settings.identification.CourierIdentificationFragment"
         android:label="fragment_courier_identification"
         tools:layout="@layout/fragment_courier_identification" />
     <fragment
         android:id="@+id/deliveryServiceFragment"
-        android:name="com.washathomes.Views.Main.Courier.More.Settings.DeliveryService.DeliveryServiceFragment"
+        android:name="com.washathomes.views.main.courier.more.settings.deliveryservice.DeliveryServiceFragment"
         android:label="fragment_delivery_service"
         tools:layout="@layout/fragment_delivery_service" />
     <fragment
         android:id="@+id/courierOrderDetailsFragment"
-        android:name="com.washathomes.Views.Main.Courier.More.OrderHistory.CourierOrderDetailsFragment"
+        android:name="com.washathomes.views.main.courier.more.orderhistory.CourierOrderDetailsFragment"
         android:label="fragment_courier_order_details"
         tools:layout="@layout/fragment_courier_order_details" >
         <action
@@ -188,7 +188,7 @@
     </fragment>
     <fragment
         android:id="@+id/courierViewItemsFragment"
-        android:name="com.washathomes.Views.Main.Courier.More.OrderHistory.CourierViewItemsFragment"
+        android:name="com.washathomes.views.main.courier.more.orderhistory.CourierViewItemsFragment"
         android:label="fragment_courier_view_items"
         tools:layout="@layout/fragment_courier_view_items" />
 

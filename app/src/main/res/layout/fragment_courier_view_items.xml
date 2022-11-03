@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Views.Main.Courier.More.OrderHistory.CourierViewItemsFragment">
+    tools:context=".views.main.courier.more.orderhistory.CourierViewItemsFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_layout"

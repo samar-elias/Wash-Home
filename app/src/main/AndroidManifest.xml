@@ -27,6 +27,7 @@
     </queries>
 
     <application
+        android:name=".WhashApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -37,31 +38,31 @@
         android:theme="@style/Theme.WashHomeApplication"
         android:usesCleartextTraffic="true">
         <activity
-            android:name="com.washathomes.Views.Main.Courier.CourierMainActivity"
+            android:name="com.washathomes.views.main.courier.CourierMainActivity"
             android:exported="false" />
         <activity
-            android:name="com.washathomes.Views.Main.Washer.WasherMainActivity"
+            android:name="com.washathomes.views.main.washer.WasherMainActivity"
             android:exported="false" />
         <activity
-            android:name="com.washathomes.Views.Maps.MapsActivity"
+            android:name="com.washathomes.views.maps.MapsActivity"
             android:exported="false" />
         <activity
-            android:name="com.washathomes.Views.Main.Washee.WasheeMainActivity"
+            android:name="com.washathomes.views.main.washee.WasheeMainActivity"
             android:exported="false" />
         <activity
-            android:name="com.washathomes.Views.Registration.WasherRegistration.WasherRegistrationActivity"
+            android:name="com.washathomes.views.registration.washerregistration.WasherRegistrationActivity"
             android:exported="false" />
         <activity
-            android:name="com.washathomes.Views.Registration.WasheeRegistration.WasheeRegistrationActivity"
+            android:name="com.washathomes.views.registration.washeeregistration.WasheeRegistrationActivity"
             android:exported="false" />
         <activity
-            android:name="com.washathomes.Views.Registration.CourierRegistration.CourierRegistrationActivity"
+            android:name="com.washathomes.views.registration.courierregistration.CourierRegistrationActivity"
             android:exported="false" />
         <activity
-            android:name="com.washathomes.Views.Introduction.IntroductionActivity"
+            android:name="com.washathomes.views.introduction.IntroductionActivity"
             android:exported="false" />
         <activity
-            android:name="com.washathomes.Views.Splash.SplashActivity"
+            android:name="com.washathomes.views.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -101,7 +102,7 @@
             android:value="true" />
 
         <service
-            android:name=".AppUtils.Services.NotificationService"
+            android:name=".apputils.services.NotificationService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

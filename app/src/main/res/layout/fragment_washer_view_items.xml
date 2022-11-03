@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/off_white"
-    tools:context=".Views.Main.Washer.Home.ViewItems.WasherViewItemsFragment">
+    tools:context=".views.main.washer.home.viewitems.WasherViewItemsFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_layout"

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    tools:context=".Views.Main.Courier.More.Profile.SwitchAccount.CourierSwitchAccountFragment">
+    tools:context=".views.main.courier.more.profile.switchaccount.CourierSwitchAccountFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/account_types_layout"
