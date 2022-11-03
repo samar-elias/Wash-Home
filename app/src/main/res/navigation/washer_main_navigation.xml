@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/washerHomeFragment"
-        android:name="com.washathomes.Views.Main.Washer.Home.WasherHomeFragment"
+        android:name="com.washathomes.views.main.washer.home.WasherHomeFragment"
         android:label="fragment_washer_home"
         tools:layout="@layout/fragment_washer_home" >
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/washerMoreFragment"
-        android:name="com.washathomes.Views.Main.Washer.More.WasherMoreFragment"
+        android:name="com.washathomes.views.main.washer.more.WasherMoreFragment"
         android:label="fragment_washer_more"
         tools:layout="@layout/fragment_washer_more" >
         <action
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/washerProfileFragment"
-        android:name="com.washathomes.Views.Main.Washer.More.Profile.WasherProfileFragment"
+        android:name="com.washathomes.views.main.washer.more.profile.WasherProfileFragment"
         android:label="fragment_washer_profile"
         tools:layout="@layout/fragment_washer_profile" >
         <action
@@ -67,12 +67,12 @@
     </fragment>
     <fragment
         android:id="@+id/washerAvailabilityFragment"
-        android:name="com.washathomes.Views.Main.Washer.More.Availability.WasherAvailabilityFragment"
+        android:name="com.washathomes.views.main.washer.more.availability.WasherAvailabilityFragment"
         android:label="fragment_washer_availability"
         tools:layout="@layout/fragment_washer_availability" />
     <fragment
         android:id="@+id/washerWebViewFragment"
-        android:name="com.washathomes.Views.Main.Washer.More.WebView.WasherWebViewFragment"
+        android:name="com.washathomes.views.main.washer.more.webview.WasherWebViewFragment"
         android:label="fragment_washer_web_view"
         tools:layout="@layout/fragment_washer_web_view" >
         <argument
@@ -81,7 +81,7 @@
     </fragment>
     <fragment
         android:id="@+id/washerOrderHistoryFragment"
-        android:name="com.washathomes.Views.Main.Washer.More.OrderHistory.WasherOrderHistoryFragment"
+        android:name="com.washathomes.views.main.washer.more.orderhistory.WasherOrderHistoryFragment"
         android:label="fragment_washer_order_history"
         tools:layout="@layout/fragment_washer_order_history" >
         <action
@@ -90,22 +90,22 @@
     </fragment>
     <fragment
         android:id="@+id/washerSwitchAccountsFragment"
-        android:name="com.washathomes.Views.Main.Washer.More.Profile.SwitchAccount.WasherSwitchAccountsFragment"
+        android:name="com.washathomes.views.main.washer.more.profile.switchaccount.WasherSwitchAccountsFragment"
         android:label="fragment_washer_switch_accounts"
         tools:layout="@layout/fragment_washer_switch_accounts" />
     <fragment
         android:id="@+id/washerProfileDetailsFragment"
-        android:name="com.washathomes.Views.Main.Washer.More.Profile.ProfileDetails.WasherProfileDetailsFragment"
+        android:name="com.washathomes.views.main.washer.more.profile.profiledetails.WasherProfileDetailsFragment"
         android:label="fragment_washer_profile_details"
         tools:layout="@layout/fragment_washer_profile_details" />
     <fragment
         android:id="@+id/washerSwitchLanguageFragment"
-        android:name="com.washathomes.Views.Main.Washer.More.Profile.Language.WasherSwitchLanguageFragment"
+        android:name="com.washathomes.views.main.washer.more.profile.language.WasherSwitchLanguageFragment"
         android:label="fragment_washer_switch_language"
         tools:layout="@layout/fragment_washer_switch_language" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.washathomes.Views.Main.Washer.More.Settings.SettingsFragment"
+        android:name="com.washathomes.views.main.washer.more.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" >
         <action
@@ -120,17 +120,17 @@
     </fragment>
     <fragment
         android:id="@+id/pickupReturnFragment"
-        android:name="com.washathomes.Views.Main.Washer.More.Settings.PickupReturn.PickupReturnFragment"
+        android:name="com.washathomes.views.main.washer.more.settings.pickupreturn.PickupReturnFragment"
         android:label="fragment_pickup_return"
         tools:layout="@layout/fragment_pickup_return" />
     <fragment
         android:id="@+id/orderPlacedFragment"
-        android:name="com.washathomes.Views.Main.Washer.Home.OrderPlaced.OrderPlacedFragment"
+        android:name="com.washathomes.views.main.washer.home.orderplaced.OrderPlacedFragment"
         android:label="fragment_order_placed2"
         tools:layout="@layout/fragment_order_placed2" />
     <fragment
         android:id="@+id/orderPlacedOverviewFragment"
-        android:name="com.washathomes.Views.Main.Washer.Home.OrderPlaced.OrderPlacedOverviewFragment"
+        android:name="com.washathomes.views.main.washer.home.orderplaced.OrderPlacedOverviewFragment"
         android:label="fragment_order_placed_overview"
         tools:layout="@layout/fragment_order_placed_overview" >
         <argument
@@ -142,7 +142,7 @@
     </fragment>
     <fragment
         android:id="@+id/washerViewItemsFragment"
-        android:name="com.washathomes.Views.Main.Washer.Home.ViewItems.WasherViewItemsFragment"
+        android:name="com.washathomes.views.main.washer.home.viewitems.WasherViewItemsFragment"
         android:label="fragment_washer_view_items"
         tools:layout="@layout/fragment_washer_view_items" >
         <argument
@@ -151,7 +151,7 @@
     </fragment>
     <fragment
         android:id="@+id/orderAcceptedFragment"
-        android:name="com.washathomes.Views.Main.Washer.Home.OrderAccepted.OrderAcceptedFragment"
+        android:name="com.washathomes.views.main.washer.home.orderaccepted.OrderAcceptedFragment"
         android:label="fragment_order_accepted"
         tools:layout="@layout/fragment_order_accepted" >
         <action
@@ -160,7 +160,7 @@
     </fragment>
     <fragment
         android:id="@+id/orderInProgressFragment"
-        android:name="com.washathomes.Views.Main.Washer.Home.OrderInProgress.OrderInProgressFragment"
+        android:name="com.washathomes.views.main.washer.home.orderinprogress.OrderInProgressFragment"
         android:label="fragment_order_in_progress2"
         tools:layout="@layout/fragment_order_in_progress2" >
         <action
@@ -169,7 +169,7 @@
     </fragment>
     <fragment
         android:id="@+id/orderDeliveredFragment"
-        android:name="com.washathomes.Views.Main.Washer.Home.OrderDelivered.OrderDeliveredFragment"
+        android:name="com.washathomes.views.main.washer.home.orderdelivered.OrderDeliveredFragment"
         android:label="fragment_order_delivered"
         tools:layout="@layout/fragment_order_delivered" >
         <action
@@ -178,27 +178,27 @@
     </fragment>
     <fragment
         android:id="@+id/washerNotificationsFragment"
-        android:name="com.washathomes.Views.Main.Washer.Notifications.WasherNotificationsFragment"
+        android:name="com.washathomes.views.main.washer.notifications.WasherNotificationsFragment"
         android:label="fragment_washer_notifications"
         tools:layout="@layout/fragment_washer_notifications" />
     <fragment
         android:id="@+id/washerWalletFragment"
-        android:name="com.washathomes.Views.Main.Washer.Wallet.WasherWalletFragment"
+        android:name="com.washathomes.views.main.washer.wallet.WasherWalletFragment"
         android:label="fragment_washer_wallet"
         tools:layout="@layout/fragment_washer_wallet" />
     <fragment
         android:id="@+id/manageServicesFragment"
-        android:name="com.washathomes.Views.Main.Washer.More.Settings.ManageServices.ManageServicesFragment"
+        android:name="com.washathomes.views.main.washer.more.settings.manageservices.ManageServicesFragment"
         android:label="fragment_manage_services"
         tools:layout="@layout/fragment_manage_services" />
     <fragment
         android:id="@+id/identificationFragment"
-        android:name="com.washathomes.Views.Main.Washer.More.Settings.Identification.IdentificationFragment"
+        android:name="com.washathomes.views.main.washer.more.settings.identification.IdentificationFragment"
         android:label="fragment_identification"
         tools:layout="@layout/fragment_identification" />
     <fragment
         android:id="@+id/washerOrderDetailsFragment"
-        android:name="com.washathomes.Views.Main.Washer.More.OrderHistory.WasherOrderDetailsFragment"
+        android:name="com.washathomes.views.main.washer.more.orderhistory.WasherOrderDetailsFragment"
         android:label="fragment_washer_order_details"
         tools:layout="@layout/fragment_washer_order_details" >
         <action
@@ -207,12 +207,12 @@
     </fragment>
     <fragment
         android:id="@+id/washerViewOrderItemsFragment"
-        android:name="com.washathomes.Views.Main.Washer.More.OrderHistory.WasherViewOrderItemsFragment"
+        android:name="com.washathomes.views.main.washer.more.orderhistory.WasherViewOrderItemsFragment"
         android:label="fragment_washer_view_order_items"
         tools:layout="@layout/fragment_washer_view_order_items" />
     <fragment
         android:id="@+id/orderReviewFragment4"
-        android:name="com.washathomes.Views.Main.Washer.Home.OrderReview.OrderReviewFragment"
+        android:name="com.washathomes.views.main.washer.home.orderreview.OrderReviewFragment"
         android:label="fragment_order_review"
         tools:layout="@layout/fragment_order_review" />
 </navigation>

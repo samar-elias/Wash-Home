@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/off_white"
-    tools:context=".Views.Main.Washer.Home.OrderAccepted.OrderAcceptedFragment">
+    tools:context=".views.main.washer.home.orderaccepted.OrderAcceptedFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_layout"

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Views.Main.Washee.More.WebView.WebViewFragment">
+    tools:context=".views.main.washee.more.webview.WebViewFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_layout"

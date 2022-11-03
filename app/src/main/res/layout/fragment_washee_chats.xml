@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Views.Main.Washee.Chats.WasheeChatsFragment">
+    tools:context=".views.main.washee.chats.WasheeChatsFragment">
 
     <include
         android:id="@+id/toolbar_layout"
