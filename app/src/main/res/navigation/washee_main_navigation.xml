@@ -176,6 +176,9 @@
         android:name="com.washathomes.views.main.washee.orders.confirmed.OrderConfirmedFragment"
         android:label="fragment_order_confirmed"
         tools:layout="@layout/fragment_order_confirmed" >
+        <argument
+            android:name="order"
+            app:argType="com.washathomes.apputils.modules.chatmodel.Order" />
         <action
             android:id="@+id/action_orderConfirmedFragment_to_washeeChatFragment2"
             app:destination="@id/washeeChatFragment" />
@@ -224,8 +227,8 @@
         android:label="fragment_washee_chat"
         tools:layout="@layout/fragment_washee_chat" >
         <argument
-            android:name="userToken"
-            app:argType="string" />
+            android:name="chat"
+            app:argType="com.washathomes.apputils.modules.chatmodel.ChatRoom"/>
     </fragment>
     <fragment
         android:id="@+id/orderReviewFragment"

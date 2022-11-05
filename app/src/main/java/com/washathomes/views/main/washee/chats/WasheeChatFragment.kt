@@ -6,13 +6,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import com.washathomes.R
+import com.washathomes.apputils.appdefs.AppDefs
+import com.washathomes.base.extension.observe
 import com.washathomes.views.main.washee.WasheeMainActivity
 import com.washathomes.databinding.FragmentWasheeChatBinding
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class WasheeChatFragment : Fragment() {
@@ -20,10 +25,7 @@ class WasheeChatFragment : Fragment() {
     lateinit var binding: FragmentWasheeChatBinding
     lateinit var washeeMainActivity: WasheeMainActivity
     lateinit var navController: NavController
-//    var chatRoom: ChatRoom? = null
-    lateinit var firebaseUser: FirebaseUser
-    private val database: DatabaseReference = FirebaseDatabase.getInstance().reference
-    private lateinit var chatDataReference: DatabaseReference
+    private val viewModel by viewModels<WasheeChatViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,43 +44,47 @@ class WasheeChatFragment : Fragment() {
         }
     }
 
-//    private fun listenData() {
-//        val listener = object : ValueEventListener {
-//            override fun onDataChange(dataSnapshot: DataSnapshot) {
-//                try {
-//                    chatRoom = dataSnapshot.getValue(ChatRoom::class.java)!!
-//                    chatRoom?.roomKey = dataSnapshot.key ?: ""
-//                    chatRoom?.let {
-//                        it.messages = ArrayList()
-//                        val messageRef = dataSnapshot.child("messages")
-//                        for (msgSnapshot: DataSnapshot in messageRef.children) {
-//                            it.messages.add(msgSnapshot.getValue(ChatMessage::class.java)!!)
-//                        }
-//                    }
-//                } catch (e: Exception) {
-//                }
-//            }
-//
-//            override fun onCancelled(databaseError: DatabaseError) {
-//            }
-//        }
-//
-//        chatDataReference.addValueEventListener(listener)
-//    }
-//
-//    fun sendMessage(msg: String) {
-//        chatRoom?.let {
-//            it.messages.add(
-//                ChatMessage(
-//                    message = msg,
-//                    senderId = AppDefs.user.results!!.id!!.toInt(),
-//                    createTime = System.currentTimeMillis()
-//                )
-//            )
-//            val childUpdates = HashMap<String, Any?>()
-//            childUpdates["${AppDefs.INBOX_PATH}/${it.roomKey}"] = it.toMap()
-//            database.updateChildren(childUpdates)
-//        }
-//    }
+    private lateinit var adapter: ChatAdapter
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.database= FirebaseDatabase.getInstance().reference
+        viewModel.chatRoom = arguments?.getParcelable("chat")!!
+        viewModel.chatDataReference = viewModel.database.child("${AppDefs.INBOX_PATH}/${viewModel.chatRoom?.roomKey}")
+
+        viewModel.getData()
+        initFragment()
+    }
+
+     fun initFragment() {
+
+        Timber.d("WasheeChatFragment init")
+        adapter = ChatAdapter(viewModel.chatRoom?.order)
+        adapter.setHasStableIds(true)
+        binding.chatList.setHasFixedSize(true)
+        binding.chatList.layoutManager = LinearLayoutManager(context)
+        binding.chatList.smoothScrollToPosition(View.FOCUS_DOWN)
+        binding.chatList.adapter = adapter
+        observe(viewModel.liveData, ::onStateChanged)
+        adapter.items = viewModel.chatRoom?.messages
+        binding.chatSendBtn.setOnClickListener { sendMessage() }
+
+    }
+
+    private fun sendMessage() {
+        val msg = binding.chatMessageEdit.text.toString()
+        viewModel.sendMessage(msg)
+        binding.chatMessageEdit.text?.clear()
+    }
+
+    private fun onStateChanged(state: WasheeChatViewModel.ModelState) {
+        when (state) {
+            is WasheeChatViewModel.ModelState.OnDataUpdate -> {
+                adapter.items = viewModel.chatRoom?.messages
+                binding.chatList.smoothScrollToPosition(View.FOCUS_DOWN)
+            }
+        }
+    }
+
+
 
 }
