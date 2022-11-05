@@ -2,23 +2,26 @@ package com.washathomes.views.main.washee.orders.orders
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.washathomes.R
 import com.washathomes.apputils.appdefs.AppDefs
 import com.washathomes.apputils.appdefs.Urls
-import com.washathomes.apputils.modules.*
+import com.washathomes.apputils.modules.ErrorResponse
+import com.washathomes.apputils.modules.WasheeActiveOrder
+import com.washathomes.apputils.modules.WasheeOrders
+import com.washathomes.apputils.modules.chatmodel.Order
 import com.washathomes.apputils.remote.RetrofitAPIs
-import com.washathomes.R
-import com.washathomes.views.main.washee.WasheeMainActivity
 import com.washathomes.databinding.FragmentOrdersBinding
+import com.washathomes.views.main.washee.WasheeMainActivity
 import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -27,6 +30,10 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
+
 @AndroidEntryPoint
 class OrdersFragment : Fragment() {
 
@@ -119,15 +126,21 @@ class OrdersFragment : Fragment() {
 
     fun orderDetails(order: WasheeActiveOrder){
         AppDefs.washeeActiveOrder = order
+
+
         when (order.status){
             "0" -> {
-                navController.navigate(OrdersFragmentDirections.actionNavigationOrdersToOrderPlacedFragment3())
+                navController.navigate(OrdersFragmentDirections.actionNavigationOrdersToOrderPlacedFragment3(
+
+                ))
+
+
             }
             "1" -> {
                 navController.navigate(OrdersFragmentDirections.actionNavigationOrdersToOrderPlacedFragment3())
             }
             "2" -> {
-                navController.navigate(OrdersFragmentDirections.actionNavigationOrdersToOrderConfirmedFragment())
+                navController.navigate(OrdersFragmentDirections.actionNavigationOrdersToOrderConfirmedFragment(toMapper(order)))
             }
             "4" -> {
                 navController.navigate(OrdersFragmentDirections.actionNavigationOrdersToOrderInProgressFragment2())
@@ -146,6 +159,110 @@ class OrdersFragment : Fragment() {
             }
         }
     }
+    fun toMapper(data: WasheeActiveOrder): Order {
 
+        return Order(
+            data.id!!.toInt(),
+           "",
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            "",
+            "",
+         Date(),
+            "",
+            "",
+        0,
+
+        Date(),
+            0,
+            "",
+            "",
+            "",
+            "",
+            "",
+            Date(),
+            "",
+            "",
+        Date(),
+            "",
+            0,
+            Date(),
+            Date(),
+            Date(),
+            Date(),
+            Date(),
+            Date(),
+            "",
+            0.0,
+            0,
+            "",
+            "",
+            "",
+
+            Date(),
+            "",
+            "",
+            "",
+            Date(),
+            0,
+            0.0,
+            0,
+            0,
+            0,
+            "",
+            "",
+            "",
+            Date(),
+            "",
+            "",
+            "",
+            0,
+            "",
+            "",
+          "",
+             Date(),
+            "",
+            0,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            Date(),
+            "",
+            0,
+            0,
+            "",
+            Date(),
+        0,
+        "",
+        "",
+        "",
+        "",
+            "",
+            "",
+            "" ,
+            "",
+            Date(),
+            Date(),
+
+
+
+
+
+        )
+
+
+    }
 
 }

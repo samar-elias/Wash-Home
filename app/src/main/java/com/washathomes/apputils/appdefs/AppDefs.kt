@@ -1,6 +1,10 @@
 package com.washathomes.apputils.appdefs
 
+import android.widget.ImageView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.Priority
 import com.google.firebase.auth.FirebaseUser
+import com.washathomes.R
 import com.washathomes.apputils.modules.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -43,6 +47,17 @@ class AppDefs {
                 "en"
             }
         }
+        fun setImage(imageUrl: String?, view: ImageView) {
+            if (imageUrl == null)
+                return
+
+            Glide.with(view.context)
+                .load(imageUrl)
+                .priority(Priority.IMMEDIATE)
+                .placeholder(R.color.black)
+                .into(view)
+        }
+
     }
 
 }

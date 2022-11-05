@@ -7,14 +7,17 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
@@ -28,8 +31,10 @@ import com.washathomes.apputils.modules.ErrorResponse
 import com.washathomes.apputils.modules.OrderObj
 import com.washathomes.apputils.remote.RetrofitAPIs
 import com.washathomes.R
+import com.washathomes.apputils.modules.chatmodel.Order
 import com.washathomes.views.main.washee.WasheeMainActivity
 import com.washathomes.databinding.FragmentOrderConfirmedBinding
+import com.washathomes.views.main.washee.chats.WasheeInboxViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -48,13 +53,14 @@ class OrderConfirmedFragment : Fragment() {
     lateinit var navController: NavController
     lateinit var firebaseUser: FirebaseUser
     lateinit var databaseReference: DatabaseReference
+    lateinit var order: Order
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val layout = inflater.inflate(R.layout.fragment_order_confirmed, container, false)
         binding = FragmentOrderConfirmedBinding.inflate(layoutInflater)
         return binding.root
     }
@@ -68,6 +74,8 @@ class OrderConfirmedFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+       order = arguments?.getParcelable("order")!!
+
         initViews(view)
         onClick()
         setData()
@@ -83,7 +91,7 @@ class OrderConfirmedFragment : Fragment() {
         binding.toolbarBackIcon.setOnClickListener { navController.popBackStack() }
         binding.directionsBtn.setOnClickListener { openGoogleMaps() }
         binding.directionsActionBtn.setOnClickListener { droppedOffOrderPopUp() }
-        binding.messageBtn.setOnClickListener { sendMessage() }
+        binding.messageBtn.setOnClickListener {  openChatScreen()}
     }
 
     private fun setData(){
@@ -170,17 +178,19 @@ class OrderConfirmedFragment : Fragment() {
         })
     }
 
-    private fun sendMessage(){
-        databaseReference.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                val user = snapshot.getValue(ChatUser:: class.java)
-                navController.navigate(OrderConfirmedFragmentDirections.actionOrderConfirmedFragmentToWasheeChatFragment2(AppDefs.user.results!!.fcm_token!!))
-            }
 
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-        })
+    private fun openChatScreen() {
+        val navController = Navigation.findNavController(binding.root)
+        val chatRoom = order.getChatRoom()
+        Log.d("chatRoom",chatRoom.toString())
+        navController.navigate(
+            OrderConfirmedFragmentDirections.actionOrderConfirmedFragmentToWasheeChatFragment2(
+                chatRoom
+            )
+        )
+
     }
+
+
 
 }

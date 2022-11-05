@@ -2,33 +2,38 @@ package com.washathomes.views.main.washee.chats
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import com.washathomes.apputils.appdefs.AppDefs
-import com.washathomes.apputils.appdefs.Urls
-import com.washathomes.apputils.modules.ErrorResponse
-import com.washathomes.apputils.modules.Inbox
-import com.washathomes.apputils.modules.InboxMessages
-import com.washathomes.apputils.remote.RetrofitAPIs
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 import com.washathomes.R
-import com.washathomes.views.main.washee.WasheeMainActivity
+import com.washathomes.apputils.appdefs.AppDefs
+import com.washathomes.apputils.base.BaseViewModel
+import com.washathomes.apputils.modules.chatmodel.ChatMessage
+import com.washathomes.apputils.modules.chatmodel.ChatRoom
+import com.washathomes.apputils.modules.chatmodel.Order
+import com.washathomes.apputils.modules.chatnew.OrderModel
+import com.washathomes.base.ui.MultiStateView
 import com.washathomes.databinding.FragmentWasheeChatsBinding
+import com.washathomes.retrofit.Resource
+import com.washathomes.views.main.washee.WasheeMainActivity
 import dagger.hilt.android.AndroidEntryPoint
-import okhttp3.Interceptor
-import okhttp3.OkHttpClient
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import timber.log.Timber
+import java.util.*
+import kotlin.collections.ArrayList
+
 
 @AndroidEntryPoint
 class WasheeChatsFragment : Fragment() {
@@ -36,14 +41,17 @@ class WasheeChatsFragment : Fragment() {
     lateinit var binding: FragmentWasheeChatsBinding
     lateinit var washeeMainActivity: WasheeMainActivity
     lateinit var navController: NavController
-    var inboxMessages: ArrayList<Inbox> = ArrayList()
 
+    private lateinit var adapter: WasheeInboxListAdapter
+    private var dataCalled = false
+    private var hasRequestSend = false
+    private val viewModel by viewModels<WasheeInboxViewModel>()
+     var multiStateView: MultiStateView? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val layout = inflater.inflate(R.layout.fragment_washee_chats, container, false)
+
         binding = FragmentWasheeChatsBinding.inflate(layoutInflater)
         return binding.root
     }
@@ -57,75 +65,279 @@ class WasheeChatsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initViews(view)
-        onClick()
-        getInbox()
+        Timber.d("WasheeInboxFragment init")
+        hasRequestSend = savedInstanceState?.getBoolean(REQUEST_SEND, false) ?: false
+        if (!hasRequestSend) {
+            initStartRequest()
+            hasRequestSend = true
+        }
+        adapter = WasheeInboxListAdapter()
+        adapter.setHasStableIds(true)
+        adapter.onClickListener = ::onClickListener
+        multiStateView = binding.multiStateView
+        binding.inboxList.setHasFixedSize(true)
+        binding.inboxList.layoutManager = LinearLayoutManager(context)
+        binding.inboxList.adapter = adapter
+
+
+
+
+
     }
+    private fun setInbox() {
 
-    private fun initViews(view: View){
-        navController = Navigation.findNavController(view)
+        if (viewModel.chatList.isNullOrEmpty()) {
 
-    }
-
-    private fun onClick(){
-        binding.toolbarLayout.clLeft.setOnClickListener { navController.navigate(
-            WasheeChatsFragmentDirections.actionWasheeChatsFragmentToWasheeNotificationsFragment()) }
-        binding.toolbarLayout.clRight.setOnClickListener { navController.navigate(
-            WasheeChatsFragmentDirections.actionWasheeChatsFragmentToBasketFragment()) }
-    }
-
-    private fun getInbox(){
-        binding.progressBar.visibility = View.VISIBLE
-        val okHttpClient = OkHttpClient.Builder().apply {
-            addInterceptor(
-                Interceptor { chain ->
-                    val builder = chain.request().newBuilder()
-                    builder.header("Content-Type", "application/json; charset=UTF-8")
-                    builder.header("Authorization", AppDefs.user.token!!)
-                    return@Interceptor chain.proceed(builder.build())
-                }
+            setCustomEmptyView(
+                R.drawable.ic_empty_inbox,
+                R.string.empty_inbox_title,
+                R.string.empty_inbox_description,
+                -1
             )
-        }.build()
-        val retrofit: Retrofit = Retrofit.Builder().baseUrl(Urls.BASE_URL).client(okHttpClient)
-            .addConverterFactory(GsonConverterFactory.create()).build()
-        val languagesCall: Call<InboxMessages> =
-            retrofit.create(RetrofitAPIs::class.java).getWasheeInbox()
-        languagesCall.enqueue(object : Callback<InboxMessages> {
-            override fun onResponse(call: Call<InboxMessages>, response: Response<InboxMessages>) {
-                binding.progressBar.visibility = View.GONE
-                if (response.isSuccessful) {
-                    if (response.body()!!.results != null) {
-                        inboxMessages = response.body()!!.results
+        } else {
+            adapter.items = viewModel.chatList
+
+        }
+    }
+
+
+
+
+
+    private fun onClickListener(inboxItem: ChatRoom?) {
+        Timber.d("Clicked Message belongs to Order with id : ${inboxItem?.orderId}")
+        if (inboxItem != null)
+            if (inboxItem.order != null) {
+              //  viewModel.getBuyerOrder(inboxItem)
+                getBuyer(inboxItem.order!!)
+            }else{
+                Toast.makeText(
+                    context,
+                    getString(R.string.chat_no_available),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+    }
+
+
+
+     fun initStartRequest() {
+        // viewModel.getData(AppDefs.user.token!!)
+         getInfo()
+
+         dataCalled = true
+    }
+
+    private fun getbuyerfromfirebas() {
+        val query =  viewModel.myRef.child(AppDefs.INBOX_PATH).orderByChild("buyerId")
+            .equalTo(AppDefs.user.results!!.id.toString())
+        query.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+                Timber.d("WasheeInboxViewModel.chatsValueEventListener.onCancelled")
+            }
+
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+//                        gson.fromJson(dataSnapshot.toString(), ChatRoom.class)
+                Timber.d("dataSnapshot : $dataSnapshot")
+                viewModel.chatList = ArrayList()
+                for (roomSnapshot: DataSnapshot in dataSnapshot.children) {
+                    val chatRoom: ChatRoom = roomSnapshot.getValue(ChatRoom::class.java)!!
+                    chatRoom.roomKey = roomSnapshot.key ?: ""
+                    Log.d("keyroom", chatRoom.roomKey)
+
+                    chatRoom.let {
+                        it.messages = ArrayList()
+                        val messageRef = roomSnapshot.child("messages")
+                        for (msgSnapshot: DataSnapshot in messageRef.children) {
+                            it.messages.add(msgSnapshot.getValue(ChatMessage::class.java)!!)
+                        }
                     }
-                    setInboxRV()
-                }else{
-                    val gson = Gson()
-                    val type = object : TypeToken<ErrorResponse>() {}.type //ErrorResponse is the data class that matches the error response
-                    val errorResponse = gson.fromJson<ErrorResponse>(response.errorBody()!!.charStream(), type) // errorResponse is an instance of ErrorResponse that will contain details about the error
-                    Toast.makeText(
-                        washeeMainActivity,
-                        errorResponse.status.massage.toString(),
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    if (chatRoom.orderId.isNotEmpty()) {
+                        //chatRoom.order = viewModel.orders.find { order -> order.id == chatRoom.orderId }
+
+
+                        chatRoom.order=
+                            viewModel.orders.find { order -> order.id == chatRoom.orderId }
+                                ?.let { toMapper(it) }
+                        viewModel.chatList.add(chatRoom)
+                        setInbox()
+
+                    }
+                }
+                viewModel.stateLiveData.value = BaseViewModel.State.ShowContent
+            }
+        })
+
+
+
+
+    }
+
+    fun setCustomEmptyView(emptyImage: Int, emptyTitle: Int, emptyDescription: Int, actionButtonText: Int, buttonClick: (() -> Unit)? = null) {
+       if (multiStateView?.getView(MultiStateView.ViewState.EMPTY) == null) {
+         //   val viewEmpty = LayoutInflater.from(context).inflate(R.layout.view_empty, binding.root)
+           val viewEmpty: View = layoutInflater.inflate(R.layout.view_empty, null)
+
+           viewEmpty.findViewById<ImageView>(R.id.empty_image).setImageResource(emptyImage)
+            viewEmpty.findViewById<TextView>(R.id.empty_title).setText(emptyTitle)
+            viewEmpty.findViewById<TextView>(R.id.empty_description).setText(emptyDescription)
+            val button = viewEmpty.findViewById<TextView>(R.id.empty_action_button)
+            if (actionButtonText > 0)
+                button.setText(actionButtonText)
+            else
+                button.visibility = View.GONE
+            button.setOnClickListener {
+                if (buttonClick != null) {
+                    buttonClick()
                 }
             }
+            multiStateView?.setViewForState(viewEmpty, MultiStateView.ViewState.EMPTY, true)
+        } else
+            multiStateView?.viewState = MultiStateView.ViewState.EMPTY
+    }
+    companion object {
+        private const val REQUEST_SEND = "REQUEST_SEND"
+    }
+    fun getInfo(){
+        viewModel.getBuyerOrdersChat(AppDefs.user.token!!)
+        viewModel.getBuyerOrderChatStatus.observe(viewLifecycleOwner, Observer {
+            when (it!!.status) {
+                Resource.Status.SUCCESS -> {
 
-            override fun onFailure(call: Call<InboxMessages>, t: Throwable) {
-                Toast.makeText(washeeMainActivity, resources.getString(R.string.internet_connection), Toast.LENGTH_SHORT).show()
+                    viewModel.orders=it.data!!.results
+                    getbuyerfromfirebas()
+
+                }
+                Resource.Status.ERROR -> {
+
+                }
             }
-
         })
     }
 
-    private fun setInboxRV(){
-        if (inboxMessages.size == 0){
-            binding.noInboxLayout.visibility = View.VISIBLE
-        }else{
-            binding.noInboxLayout.visibility = View.GONE
-        }
-        val adapter = WasheeInboxAdapter(this, inboxMessages)
-        binding.inboxList.adapter = adapter
-        binding.inboxList.layoutManager = LinearLayoutManager(washeeMainActivity)
+    fun getBuyer(order:Order){
+       /* viewModel.getBuyerOrders(AppDefs.user.token!!,order.id)
+        viewModel.ggetBuyerOrderStatus.observe(viewLifecycleOwner, Observer {
+            when (it!!.status) {
+                Resource.Status.SUCCESS -> {
+
+                }
+                Resource.Status.ERROR -> {
+
+                }
+            }
+        })*/
+        Navigation.findNavController(binding.root).navigate(
+            WasheeChatsFragmentDirections.actionNavigationInboxToWasheeChatFragment(
+                order.getChatRoom()
+            )
+        )
+    }
+
+    fun toMapper(data:  OrderModel): Order {
+
+        return Order(
+            data.id!!.toInt(),
+            "",
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            "",
+            "",
+            Date(),
+            "",
+            "",
+            0,
+
+            Date(),
+            0,
+            "",
+            "",
+            "",
+            "",
+            "",
+            Date(),
+            "",
+            "",
+            Date(),
+            "",
+            0,
+            Date(),
+            Date(),
+            Date(),
+            Date(),
+            Date(),
+            Date(),
+            "",
+            0.0,
+            0,
+            "",
+            "",
+            "",
+
+            Date(),
+            "",
+            "",
+            "",
+            Date(),
+            0,
+            0.0,
+            0,
+            0,
+            0,
+            "",
+            "",
+            "",
+            Date(),
+            "",
+            "",
+            "",
+            0,
+            "",
+            "",
+            "",
+            Date(),
+            "",
+            0,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            Date(),
+            "",
+            0,
+            0,
+            "",
+            Date(),
+            0,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "" ,
+            "",
+            Date(),
+            Date(),
+
+
+
+
+
+            )
+
+
     }
 
 }
