@@ -7,26 +7,25 @@ import com.washathomes.retrofit.BaseDataSource
 
 import javax.inject.Inject
 import io.reactivex.Observable
+
 class APIManager @Inject constructor(
     private val mApi: WashAPI,
 
-): BaseDataSource() {
+    ) : BaseDataSource() {
 
 
-    suspend fun getBuyerOrder(token:String,orderId: Int) = getResult {
+    suspend fun getBuyerOrdersChat(token: String) = getResult {
 
-        mApi.getBuyerOrder(token,orderId)
+        mApi.getBuyerOrdersChat(token)
     }
 
-    suspend fun getBuyerOrdersChat(token:String) = getResult {
-
-         mApi.getBuyerOrdersChat(token)
+    suspend fun getSellerOrdersChat(token: String) = getResult {
+        mApi.getSellerOrdersChat(token)
     }
+    suspend fun getDriverOrdersChat(token: String) = getResult {
 
-
-
-
-
+        mApi.getDriverOrdersChat(token)
+    }
 
 
 }

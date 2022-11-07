@@ -31,9 +31,11 @@ import com.washathomes.apputils.modules.ErrorResponse
 import com.washathomes.apputils.modules.OrderObj
 import com.washathomes.apputils.remote.RetrofitAPIs
 import com.washathomes.R
+import com.washathomes.apputils.modules.chatmodel.ChatRoom
 import com.washathomes.apputils.modules.chatmodel.Order
 import com.washathomes.views.main.washee.WasheeMainActivity
 import com.washathomes.databinding.FragmentOrderConfirmedBinding
+import com.washathomes.retrofit.Resource
 import com.washathomes.views.main.washee.chats.WasheeInboxViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.Interceptor
@@ -54,7 +56,7 @@ class OrderConfirmedFragment : Fragment() {
     lateinit var firebaseUser: FirebaseUser
     lateinit var databaseReference: DatabaseReference
     lateinit var order: Order
-
+    private val viewModel by viewModels<WasheeInboxViewModel>()
 
 
     override fun onCreateView(
@@ -179,15 +181,33 @@ class OrderConfirmedFragment : Fragment() {
     }
 
 
-    private fun openChatScreen() {
-        val navController = Navigation.findNavController(binding.root)
-        val chatRoom = order.getChatRoom()
-        Log.d("chatRoom",chatRoom.toString())
-        navController.navigate(
-            OrderConfirmedFragmentDirections.actionOrderConfirmedFragmentToWasheeChatFragment2(
-                chatRoom
-            )
-        )
+    fun openChatScreen() {
+
+        viewModel.getBuyerOrdersChat(AppDefs.user.token!!)
+
+        viewModel.getBuyerOrderChatStatus.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            when (it!!.status) {
+                Resource.Status.SUCCESS -> {
+                    var result=it.data!!.results.filter{ it.id == order.id.toString()}.firstOrNull()
+
+
+                    val navController = Navigation.findNavController(binding.root)
+
+
+                     navController.navigate(
+                         OrderConfirmedFragmentDirections.actionOrderConfirmedFragmentToWasheeChatFragment2(
+                             ChatRoom(orderId=result!!.id, roomKey=result!!.id, buyerId=result!!.washee_id, sellerId=result!!.washer_id, driverId=result!!.courier_id, messages=ArrayList())
+                         )
+                     )
+
+                }
+                Resource.Status.ERROR -> {
+
+                }
+            }
+
+        })
+
 
     }
 

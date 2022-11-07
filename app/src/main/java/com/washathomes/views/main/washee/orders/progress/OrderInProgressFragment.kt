@@ -7,12 +7,14 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.google.gson.Gson
@@ -24,8 +26,13 @@ import com.washathomes.apputils.modules.ErrorResponse
 import com.washathomes.apputils.modules.OrderObj
 import com.washathomes.apputils.remote.RetrofitAPIs
 import com.washathomes.R
+import com.washathomes.apputils.modules.chatmodel.ChatRoom
+import com.washathomes.apputils.modules.chatmodel.Order
 import com.washathomes.views.main.washee.WasheeMainActivity
 import com.washathomes.databinding.FragmentOrderInProgressBinding
+import com.washathomes.retrofit.Resource
+import com.washathomes.views.main.washee.chats.WasheeInboxViewModel
+import com.washathomes.views.main.washee.orders.confirmed.OrderConfirmedFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -42,7 +49,8 @@ class OrderInProgressFragment : Fragment() {
     lateinit var binding: FragmentOrderInProgressBinding
     lateinit var washeeMainActivity: WasheeMainActivity
     lateinit var navController: NavController
-
+    private val viewModel by viewModels<WasheeInboxViewModel>()
+    lateinit var order: Order
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -62,9 +70,13 @@ class OrderInProgressFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        order = arguments?.getParcelable("order")!!
         initViews(view)
         onClick()
         setData()
+        binding.messageBtn.setOnClickListener{
+            openChatScreen()
+        }
     }
 
     private fun initViews(view: View){
@@ -170,6 +182,34 @@ class OrderInProgressFragment : Fragment() {
             }
 
         })
+    }
+    fun openChatScreen() {
+
+        viewModel.getBuyerOrdersChat(AppDefs.user.token!!)
+
+        viewModel.getBuyerOrderChatStatus.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            when (it!!.status) {
+                Resource.Status.SUCCESS -> {
+                    var result=it.data!!.results.filter{ it.id == order.id.toString()}.firstOrNull()
+
+
+                    val navController = Navigation.findNavController(binding.root)
+
+                    navController.navigate(
+                        OrderInProgressFragmentDirections.actionOrderInProgressFragment2ToWasheeChatFragment(
+                            ChatRoom(orderId=result!!.id, roomKey=result!!.id, buyerId=result!!.washee_id, sellerId=result!!.washer_id, driverId=result!!.courier_id, messages=ArrayList())
+                        )
+                    )
+
+                }
+                Resource.Status.ERROR -> {
+
+                }
+            }
+
+        })
+
+
     }
 
 }

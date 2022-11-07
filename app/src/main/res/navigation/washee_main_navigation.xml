@@ -188,6 +188,9 @@
         android:name="com.washathomes.views.main.washee.orders.progress.OrderInProgressFragment"
         android:label="fragment_order_in_progress"
         tools:layout="@layout/fragment_order_in_progress" >
+        <argument
+            android:name="order"
+            app:argType="com.washathomes.apputils.modules.chatmodel.Order" />
         <action
             android:id="@+id/action_orderInProgressFragment2_to_washeeChatFragment"
             app:destination="@id/washeeChatFragment" />

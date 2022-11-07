@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,7 +22,9 @@ import com.washathomes.apputils.modules.WasheeOrders
 import com.washathomes.apputils.modules.chatmodel.Order
 import com.washathomes.apputils.remote.RetrofitAPIs
 import com.washathomes.databinding.FragmentOrdersBinding
+import com.washathomes.retrofit.Resource
 import com.washathomes.views.main.washee.WasheeMainActivity
+import com.washathomes.views.main.washee.chats.WasheeInboxViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -41,7 +44,7 @@ class OrdersFragment : Fragment() {
     lateinit var washeeMainActivity: WasheeMainActivity
     lateinit var navController: NavController
     var orders: ArrayList<WasheeActiveOrder> = ArrayList()
-    var page = 1
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -67,17 +70,25 @@ class OrdersFragment : Fragment() {
         getOrders()
     }
 
-    private fun initViews(view: View){
+    private fun initViews(view: View) {
         navController = Navigation.findNavController(view)
 
     }
 
-    private fun onClick(){
-        binding.toolbarLayout.clLeft.setOnClickListener { navController.navigate(OrdersFragmentDirections.actionNavigationOrdersToWasheeNotificationsFragment()) }
-        binding.toolbarLayout.clRight.setOnClickListener { navController.navigate(OrdersFragmentDirections.actionNavigationOrdersToBasketFragment()) }
+    private fun onClick() {
+        binding.toolbarLayout.clLeft.setOnClickListener {
+            navController.navigate(
+                OrdersFragmentDirections.actionNavigationOrdersToWasheeNotificationsFragment()
+            )
+        }
+        binding.toolbarLayout.clRight.setOnClickListener {
+            navController.navigate(
+                OrdersFragmentDirections.actionNavigationOrdersToBasketFragment()
+            )
+        }
     }
 
-    private fun getOrders(){
+    private fun getOrders() {
         binding.progressBar.visibility = View.VISIBLE
         val okHttpClient = OkHttpClient.Builder().apply {
             addInterceptor(
@@ -99,10 +110,14 @@ class OrdersFragment : Fragment() {
                 if (response.isSuccessful) {
                     orders = response.body()!!.results
                     setOrdersRV()
-                }else{
+                } else {
                     val gson = Gson()
-                    val type = object : TypeToken<ErrorResponse>() {}.type //ErrorResponse is the data class that matches the error response
-                    val errorResponse = gson.fromJson<ErrorResponse>(response.errorBody()!!.charStream(), type) // errorResponse is an instance of ErrorResponse that will contain details about the error
+                    val type = object :
+                        TypeToken<ErrorResponse>() {}.type //ErrorResponse is the data class that matches the error response
+                    val errorResponse = gson.fromJson<ErrorResponse>(
+                        response.errorBody()!!.charStream(),
+                        type
+                    ) // errorResponse is an instance of ErrorResponse that will contain details about the error
                     Toast.makeText(
                         washeeMainActivity,
                         errorResponse.status.massage.toString(),
@@ -112,27 +127,33 @@ class OrdersFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<WasheeOrders>, t: Throwable) {
-                Toast.makeText(washeeMainActivity, resources.getString(R.string.internet_connection), Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    washeeMainActivity,
+                    resources.getString(R.string.internet_connection),
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
         })
     }
 
-    private fun setOrdersRV(){
+    private fun setOrdersRV() {
         val adapter = OrdersAdapter(this, orders)
         binding.ordersRV.adapter = adapter
         binding.ordersRV.layoutManager = LinearLayoutManager(washeeMainActivity)
     }
 
-    fun orderDetails(order: WasheeActiveOrder){
+    fun orderDetails(order: WasheeActiveOrder) {
         AppDefs.washeeActiveOrder = order
 
 
-        when (order.status){
+        when (order.status) {
             "0" -> {
-                navController.navigate(OrdersFragmentDirections.actionNavigationOrdersToOrderPlacedFragment3(
+                navController.navigate(
+                    OrdersFragmentDirections.actionNavigationOrdersToOrderPlacedFragment3(
 
-                ))
+                    )
+                )
 
 
             }
@@ -140,30 +161,46 @@ class OrdersFragment : Fragment() {
                 navController.navigate(OrdersFragmentDirections.actionNavigationOrdersToOrderPlacedFragment3())
             }
             "2" -> {
-                navController.navigate(OrdersFragmentDirections.actionNavigationOrdersToOrderConfirmedFragment(toMapper(order)))
+                navController.navigate(
+                    OrdersFragmentDirections.actionNavigationOrdersToOrderConfirmedFragment(
+                        toMapper(order)
+                    )
+                )
             }
             "4" -> {
-                navController.navigate(OrdersFragmentDirections.actionNavigationOrdersToOrderInProgressFragment2())
+                navController.navigate(OrdersFragmentDirections.actionNavigationOrdersToOrderInProgressFragment2(
+                    toMapper(order)
+                ))
             }
             "5" -> {
-                navController.navigate(OrdersFragmentDirections.actionNavigationOrdersToOrderInProgressFragment2())
+                navController.navigate(OrdersFragmentDirections.actionNavigationOrdersToOrderInProgressFragment2(
+                    toMapper(order)
+                ))
             }
             "6" -> {
-                navController.navigate(OrdersFragmentDirections.actionNavigationOrdersToOrderInProgressFragment2())
+                navController.navigate(OrdersFragmentDirections.actionNavigationOrdersToOrderInProgressFragment2(
+                    toMapper(order)
+                ))
             }
             "7" -> {
-                navController.navigate(OrdersFragmentDirections.actionNavigationOrdersToOrderInProgressFragment2())
+                navController.navigate(OrdersFragmentDirections.actionNavigationOrdersToOrderInProgressFragment2(
+                    toMapper(order)
+                ))
             }
             "8" -> {
                 navController.navigate(OrdersFragmentDirections.actionNavigationOrdersToOrderCompletedFragment())
             }
         }
     }
-    fun toMapper(data: WasheeActiveOrder): Order {
 
+    fun toMapper(data: WasheeActiveOrder): Order {
+        /*  roomKey = this.id.toString(),
+          buyerId = this.buyer_user_id.toString(),
+          sellerId = this.seller_user_id.toString(),
+          driverId = this.driver_user_id.toString(),*/
         return Order(
             data.id!!.toInt(),
-           "",
+            "",
             0.0,
             0.0,
             0.0,
@@ -171,40 +208,40 @@ class OrdersFragment : Fragment() {
             0.0,
             0.0,
             0.0,
-            "",
-            "",
-         Date(),
-            "",
-            "",
-        0,
-
-        Date(),
-            0,
-            "",
-            "",
-            "",
             "",
             "",
             Date(),
             "",
-            "",
-        Date(),
             "",
             0,
-            Date(),
-            Date(),
-            Date(),
-            Date(),
-            Date(),
-            Date(),
-            "",
-            0.0,
-            0,
-            "",
-            "",
-            "",
 
             Date(),
+            0,
+            "",
+            "",
+            "",
+            "",
+            "",
+            Date(),
+            "",
+            "",
+            Date(),
+            "",
+            0,
+            Date(),
+            Date(),
+            Date(),
+            Date(),
+            Date(),
+            Date(),
+            "",
+            0.0,
+            0,
+            "",
+            "",
+            "",
+
+            Date(),
             "",
             "",
             "",
@@ -224,9 +261,26 @@ class OrdersFragment : Fragment() {
             0,
             "",
             "",
-          "",
-             Date(),
             "",
+            Date(),
+            "",
+            0,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            Date(),
+            "",
+            0,
+            0,
+            "",
+            Date(),
             0,
             "",
             "",
@@ -236,33 +290,15 @@ class OrdersFragment : Fragment() {
             "",
             "",
             "",
-            "",
-            "",
-            Date(),
-            "",
-            0,
-            0,
-            "",
-            Date(),
-        0,
-        "",
-        "",
-        "",
-        "",
-            "",
-            "",
-            "" ,
-            "",
             Date(),
             Date(),
 
 
-
-
-
-        )
+            )
 
 
     }
+
+
 
 }

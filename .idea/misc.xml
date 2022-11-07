@@ -217,15 +217,25 @@
         <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
         <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/drawable-nodpi/rounded_chat_balloon_left.xml" value="0.1" />
         <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/drawable/view_items_background.xml" value="0.1" />
+        <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/activity_courier_main.xml" value="0.1453125" />
+        <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/activity_washee_main.xml" value="0.1" />
         <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/activity_washee_registration.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/activity_washer_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/dialog_progress.xml" value="0.14356884057971014" />
+        <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/fragment_order_accepted.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/fragment_order_completed.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/fragment_order_confirmed.xml" value="0.10326086956521739" />
+        <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/fragment_order_in_progress.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/fragment_order_in_progress3.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/fragment_order_placed2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/fragment_order_placed_overview.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/fragment_orders.xml" value="0.10326086956521739" />
         <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/fragment_phone_language.xml" value="0.1234375" />
         <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/fragment_washee_chat.xml" value="0.17395833333333333" />
         <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/fragment_washee_chats.xml" value="0.14356884057971014" />
+        <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/fragment_washer_chats.xml" value="0.1296875" />
+        <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/fragment_washer_home.xml" value="0.17028985507246377" />
         <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/item_chat.xml" value="0.19882246376811594" />
         <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/item_inbox.xml" value="0.1" />
         <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/toolbar_layout.xml" value="0.11302083333333333" />
@@ -233,6 +243,9 @@
         <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/view_error.xml" value="0.15260416666666668" />
         <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/view_loading.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/layout/washer_toolbar_layout.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/menu/courier_menu.xml" value="0.1453125" />
+        <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/menu/washee_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user1/AndroidStudioProjects/Wash-Home/app/src/main/res/menu/washer_menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

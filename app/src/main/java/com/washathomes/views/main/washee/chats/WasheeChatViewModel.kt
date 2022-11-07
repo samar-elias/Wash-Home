@@ -40,6 +40,7 @@ class WasheeChatViewModel @Inject constructor(val apiManager: APIManager) : Base
                 Timber.d("ValueEventListener.dataSnapshot : $dataSnapshot")
                 try {
                     chatRoom = dataSnapshot.getValue(ChatRoom::class.java)!!
+
                     chatRoom?.roomKey = dataSnapshot.key ?: ""
                     chatRoom?.let {
                         it.messages = ArrayList()

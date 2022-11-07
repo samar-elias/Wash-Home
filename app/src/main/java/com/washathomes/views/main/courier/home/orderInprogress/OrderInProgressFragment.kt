@@ -15,6 +15,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.google.gson.Gson
@@ -26,9 +27,13 @@ import com.washathomes.apputils.modules.ErrorResponse
 import com.washathomes.apputils.modules.OrderObj
 import com.washathomes.apputils.remote.RetrofitAPIs
 import com.washathomes.R
+import com.washathomes.apputils.modules.chatmodel.ChatRoom
+import com.washathomes.apputils.modules.chatmodel.Order
 import com.washathomes.views.main.courier.CourierMainActivity
 import com.washathomes.views.main.washer.home.orderinprogress.OrderInProgressFragmentDirections
 import com.washathomes.databinding.FragmentOrderInProgress3Binding
+import com.washathomes.retrofit.Resource
+import com.washathomes.views.main.washee.chats.WasheeInboxViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -46,6 +51,7 @@ class OrderInProgressFragment : Fragment() {
     lateinit var courierMainActivity: CourierMainActivity
     lateinit var navController: NavController
     var deliveryAddress = ""
+    private val viewModel by viewModels<WasheeInboxViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -66,9 +72,13 @@ class OrderInProgressFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         initViews(view)
         onClick()
         setData()
+        binding.messageBtn.setOnClickListener {
+            openChatScreen()
+        }
     }
 
     private fun initViews(view: View){
@@ -398,5 +408,33 @@ class OrderInProgressFragment : Fragment() {
         val uri = String.format(Locale.ENGLISH, "geo:%f,%f", AppDefs.activeOrder.lat.toFloat(), AppDefs.activeOrder.long.toFloat())
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
         startActivity(intent)
+    }
+    fun openChatScreen() {
+
+        viewModel.getDriverOrdersChat(AppDefs.user.token!!)
+
+        viewModel.getBuyerOrderChatStatus.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            when (it!!.status) {
+                Resource.Status.SUCCESS -> {
+                    var result=it.data!!.results.filter{ it.id == AppDefs.activeOrder.id}.firstOrNull()
+
+
+                    val navController = Navigation.findNavController(binding.root)
+                   // action_orderInProgressFragment3_to_washeeChatFragment3
+                    navController.navigate(
+                       com.washathomes.views.main.courier.home.orderInprogress.OrderInProgressFragmentDirections.actionOrderInProgressFragment3ToWasheeChatFragment3(
+                            ChatRoom(orderId=result!!.id, roomKey=result!!.id, buyerId=result!!.washee_id, sellerId=result!!.washer_id, driverId=result!!.courier_id, messages=ArrayList())
+                        )
+                    )
+
+                }
+                Resource.Status.ERROR -> {
+
+                }
+            }
+
+        })
+
+
     }
 }
