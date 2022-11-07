@@ -157,6 +157,19 @@
         <action
             android:id="@+id/action_orderAcceptedFragment_to_washerViewItemsFragment"
             app:destination="@id/washerViewItemsFragment" />
+        <action
+            android:id="@+id/action_orderAcceptedFragment_to_washeeChatFragment2"
+            app:destination="@id/washeeChatFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/washerInboxFragment"
+        android:name="com.washathomes.views.main.washee.chats.WasheeChatsFragment"
+        android:label="fragment_washee_chats"
+        tools:layout="@layout/fragment_washee_chats" >
+
+        <action
+            android:id="@+id/action_washerInboxFragment_to_washeeChatFragment2"
+            app:destination="@id/washeeChatFragment2" />
     </fragment>
     <fragment
         android:id="@+id/orderInProgressFragment"
@@ -215,4 +228,12 @@
         android:name="com.washathomes.views.main.washer.home.orderreview.OrderReviewFragment"
         android:label="fragment_order_review"
         tools:layout="@layout/fragment_order_review" />
+    <fragment
+        android:id="@+id/washeeChatFragment2"
+        android:name="com.washathomes.views.main.washee.chats.WasheeChatFragment"
+        android:label="WasheeChatFragment" >
+        <argument
+            android:name="chat"
+            app:argType="com.washathomes.apputils.modules.chatmodel.ChatRoom"/>
+    </fragment>
 </navigation>

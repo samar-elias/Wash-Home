@@ -39,8 +39,8 @@ class WasheeInboxViewModel @Inject constructor(private val apiManager: APIManage
     var orders: List<OrderModel> = ArrayList()
 
     val getBuyerOrderChatStatus = MutableLiveData<Resource<OrderListResponse>?>()
-    val ggetBuyerOrderStatus = MutableLiveData<Resource<Order>?>()
-
+  /*  val getSellerOrdersChatStatus = MutableLiveData<Resource<OrderListResponse>?>()
+    val getDriverOrdersChatStatus = MutableLiveData<Resource<OrderListResponse>?>()*/
     val database = FirebaseDatabase.getInstance()
     val myRef = database.reference
     fun getBuyerOrdersChat(token: String) {
@@ -49,12 +49,21 @@ class WasheeInboxViewModel @Inject constructor(private val apiManager: APIManage
             getBuyerOrderChatStatus.postValue(response)
         }
     }
-    fun getBuyerOrders(token: String,orderId: Int) {
+
+    fun getSellerOrdersChat(token: String) {
         viewModelScope.launch {
-            val response = apiManager.getBuyerOrder(token,orderId)
-            ggetBuyerOrderStatus.postValue(response)
+            val response = apiManager.getSellerOrdersChat(token)
+            getBuyerOrderChatStatus.postValue(response)
         }
     }
+    fun getDriverOrdersChat(token: String) {
+        viewModelScope.launch {
+            val response = apiManager.getDriverOrdersChat(token)
+            getBuyerOrderChatStatus.postValue(response)
+        }
+    }
+
+
 
 
 

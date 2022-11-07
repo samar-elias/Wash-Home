@@ -23,10 +23,10 @@ interface WashAPI {
 
 
     @GET("order_list_seller_chat")
-    fun getSellerOrdersChat(@Header("Authorization")token: String): Observable<Response<ArrayList<Order>>>
+    suspend fun getSellerOrdersChat(@Header("Authorization")token: String): Response<OrderListResponse>
 
     @GET("order_list_driver_chat")
-    fun getDriverOrdersChat(@Header("Authorization")token: String): Observable<Response<ArrayList<Order>>>
+    suspend fun getDriverOrdersChat(@Header("Authorization")token: String): Response<OrderListResponse>
     @FormUrlEncoded
     @POST("buyer_order_delete")
     fun buyerOrderDelete(

@@ -9,14 +9,17 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.Query
 import com.google.firebase.database.ValueEventListener
 import com.washathomes.R
 import com.washathomes.apputils.appdefs.AppDefs
@@ -129,8 +132,20 @@ class WasheeChatsFragment : Fragment() {
     }
 
     private fun getbuyerfromfirebas() {
-        val query =  viewModel.myRef.child(AppDefs.INBOX_PATH).orderByChild("buyerId")
-            .equalTo(AppDefs.user.results!!.id.toString())
+        if (AppDefs.user.results!!.sigup_type == "1"){
+            checkRes(viewModel.myRef.child(AppDefs.INBOX_PATH).orderByChild("buyerId")
+                .equalTo(AppDefs.user.results!!.id.toString()))
+        }else if (AppDefs.user.results!!.sigup_type == "2"){
+            checkRes(viewModel.myRef.child(AppDefs.INBOX_PATH).orderByChild("sellerId")
+                .equalTo(AppDefs.user.results!!.id.toString()))
+        }else if (AppDefs.user.results!!.sigup_type == "3"){
+            checkRes(viewModel.myRef.child(AppDefs.INBOX_PATH).orderByChild("driverId")
+                .equalTo(AppDefs.user.results!!.id.toString()))
+        }
+
+
+    }
+    fun checkRes(query:Query){
         query.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
                 Timber.d("WasheeInboxViewModel.chatsValueEventListener.onCancelled")
@@ -167,10 +182,6 @@ class WasheeChatsFragment : Fragment() {
                 viewModel.stateLiveData.value = BaseViewModel.State.ShowContent
             }
         })
-
-
-
-
     }
 
     fun setCustomEmptyView(emptyImage: Int, emptyTitle: Int, emptyDescription: Int, actionButtonText: Int, buttonClick: (() -> Unit)? = null) {
@@ -199,7 +210,13 @@ class WasheeChatsFragment : Fragment() {
         private const val REQUEST_SEND = "REQUEST_SEND"
     }
     fun getInfo(){
-        viewModel.getBuyerOrdersChat(AppDefs.user.token!!)
+        if (AppDefs.user.results!!.sigup_type == "1"){
+            viewModel.getBuyerOrdersChat(AppDefs.user.token!!)
+        }else if (AppDefs.user.results!!.sigup_type == "2"){
+            viewModel.getSellerOrdersChat(AppDefs.user.token!!)
+        }else if (AppDefs.user.results!!.sigup_type == "3"){
+            viewModel.getDriverOrdersChat(AppDefs.user.token!!)
+        }
         viewModel.getBuyerOrderChatStatus.observe(viewLifecycleOwner, Observer {
             when (it!!.status) {
                 Resource.Status.SUCCESS -> {
@@ -213,25 +230,22 @@ class WasheeChatsFragment : Fragment() {
                 }
             }
         })
+
+
+
     }
 
     fun getBuyer(order:Order){
-       /* viewModel.getBuyerOrders(AppDefs.user.token!!,order.id)
-        viewModel.ggetBuyerOrderStatus.observe(viewLifecycleOwner, Observer {
-            when (it!!.status) {
-                Resource.Status.SUCCESS -> {
+        if (AppDefs.user.results!!.sigup_type == "1"){
+            findNavController().navigate(R.id.action_navigation_inbox_to_washeeChatFragment, bundleOf(Pair("chat", order.getChatRoom())))
 
-                }
-                Resource.Status.ERROR -> {
+        } else  if (AppDefs.user.results!!.sigup_type == "2"){
+            findNavController().navigate(R.id.action_washerInboxFragment_to_washeeChatFragment2, bundleOf(Pair("chat", order.getChatRoom())))
 
-                }
-            }
-        })*/
-        Navigation.findNavController(binding.root).navigate(
-            WasheeChatsFragmentDirections.actionNavigationInboxToWasheeChatFragment(
-                order.getChatRoom()
-            )
-        )
+        } else  if (AppDefs.user.results!!.sigup_type == "3"){
+            findNavController().navigate(R.id.action_courierInboxFragment_to_washeeChatFragment3, bundleOf(Pair("chat", order.getChatRoom())))
+
+        }
     }
 
     fun toMapper(data:  OrderModel): Order {
@@ -330,10 +344,6 @@ class WasheeChatsFragment : Fragment() {
             "",
             Date(),
             Date(),
-
-
-
-
 
             )
 

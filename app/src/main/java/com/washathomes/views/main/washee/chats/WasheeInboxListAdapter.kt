@@ -43,11 +43,11 @@ class WasheeInboxListAdapter : BaseAdapter<ItemInboxBinding, ChatRoom>(R.layout.
                 holder.binding.inboxTime.text = DateUtil.convertLongToTimeString(it.messages.last().createTime)
                 if (it.order?.driver_user_id == 0) {
                     //TODO CHECK YESR
-                  /*  if (AppDefs.userType == UserType.WASHER) {
+                   if (AppDefs.user.results!!.sigup_type == "2") {
                         setImage(holder.binding.inboxProfile, it.order?.buyer_profile_picture)
                     } else {
                         setImage(holder.binding.inboxProfile, it.order?.seller_profile_picture)
-                    }*/
+                    }
                 } else
                     holder.binding.inboxProfile.setImageResource(R.drawable.ic_chatroom)
             }

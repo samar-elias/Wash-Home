@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
@@ -53,6 +54,9 @@ class WasheeChatFragment : Fragment() {
 
         viewModel.getData()
         initFragment()
+        binding.toolbarBackIcon.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
      fun initFragment() {

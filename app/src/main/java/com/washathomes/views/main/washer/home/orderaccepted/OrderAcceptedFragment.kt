@@ -15,6 +15,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
@@ -30,8 +31,11 @@ import com.washathomes.apputils.modules.ErrorResponse
 import com.washathomes.apputils.modules.OrderObj
 import com.washathomes.apputils.remote.RetrofitAPIs
 import com.washathomes.R
+import com.washathomes.apputils.modules.chatmodel.ChatRoom
 import com.washathomes.views.main.washer.WasherMainActivity
 import com.washathomes.databinding.FragmentOrderAcceptedBinding
+import com.washathomes.retrofit.Resource
+import com.washathomes.views.main.washee.chats.WasheeInboxViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -52,7 +56,7 @@ class OrderAcceptedFragment : Fragment() {
     var deliveryAddress = ""
     lateinit var firebaseUser: FirebaseUser
     lateinit var databaseReference: DatabaseReference
-
+    private val viewModel by viewModels<WasheeInboxViewModel>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -75,6 +79,9 @@ class OrderAcceptedFragment : Fragment() {
         initViews(view)
         onClick()
         setData()
+        binding.messageBtn.setOnClickListener{
+            openChatScreen()
+        }
     }
 
     private fun initViews(view: View){
@@ -214,17 +221,34 @@ class OrderAcceptedFragment : Fragment() {
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
         startActivity(intent)
     }
+    fun openChatScreen() {
 
-    private fun sendMessage(){
-        databaseReference.addValueEventListener(object : ValueEventListener{
-            override fun onDataChange(snapshot: DataSnapshot) {
-                val user = snapshot.getValue(ChatUser:: class.java)
+        viewModel.getSellerOrdersChat(AppDefs.user.token!!)
 
+        viewModel.getBuyerOrderChatStatus.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            when (it!!.status) {
+                Resource.Status.SUCCESS -> {
+                    var result=it.data!!.results.filter{ it.id == AppDefs.activeOrder.id}.firstOrNull()
+
+
+                    val navController = Navigation.findNavController(binding.root)
+
+
+                    navController.navigate(
+                        OrderAcceptedFragmentDirections.actionOrderAcceptedFragmentToWasheeChatFragment2(
+                            ChatRoom(orderId=result!!.id, roomKey=result!!.id, buyerId=result!!.washee_id, sellerId=result!!.washer_id, driverId=result!!.courier_id, messages=ArrayList())
+                        )
+                    )
+
+                }
+                Resource.Status.ERROR -> {
+
+                }
             }
 
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
         })
+
+
     }
+
 }
