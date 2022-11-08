@@ -99,6 +99,7 @@
             android:value="@string/google_places_key" />
 
         <meta-data
+
             android:name="com.google.android.gms.wallet.api.enabled"
             android:value="true" />
 
