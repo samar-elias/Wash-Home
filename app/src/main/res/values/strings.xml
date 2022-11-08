@@ -291,4 +291,11 @@
     <string name="payment_autharization_error_message">We are unable to authenticate your payment method. Please choose a different payment method and try again.</string>
     <string name="no_messages_available">No messages available</string>
     <string name="chat_message_hint">Type Your Message...</string>
+    <string name="cancel_order">Cancel Order</string>
+    <string name="reason_for_deleting">Reason for Deleting</string>
+    <string name="submit">Submit</string>
+    <string name="order_delete_reason_hint">Can you tell us why you deleted the order?</string>
+    <string name="order_deleted_successfully">Order deleted successfully!</string>
+    <string name="phone_starts_0">Phone number can\'t start with 0 !</string>
+    <string name="payments_received">Payments received</string>
 </resources>

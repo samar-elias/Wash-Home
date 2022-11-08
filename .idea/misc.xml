@@ -215,6 +215,45 @@
         <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/menu/washer_menu.xml" value="0.18385416666666668" />
         <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Users/hp/Desktop/WasheHome/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/drawable/ic_circle_right.xml" value="0.1385" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/drawable/rectangle_view_gray_solid.xml" value="0.192" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/drawable/rectangle_view_gray_solid_transparent.xml" value="0.192" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/drawable/white_radius.xml" value="0.1385" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/active_order_layout.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/activity_splash.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/activity_washee_main.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/basket_item_layout.xml" value="0.5" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/category_layout.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/delete_order_popup.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/fragment_courier_home.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/fragment_courier_more.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/fragment_courier_wallet.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/fragment_delivery_info.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/fragment_more.xml" value="0.22" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/fragment_order_completed.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/fragment_order_details.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/fragment_order_in_progress.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/fragment_order_in_progress2.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/fragment_order_placed.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/fragment_order_review2.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/fragment_orders.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/fragment_phone_language.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/fragment_washee_home.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/fragment_washer_home.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/fragment_washer_more.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/fragment_washer_services_data.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/fragment_washer_wallet.xml" value="0.17037037037037037" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/image_picker_dialog.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/image_slider_layout.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/item_incoming_content.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/item_incoming_title.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/item_notification.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/order_item_layout.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/pending_order_item.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/pick_up_order_popup.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/toolbar_layout.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/layout/washer_toolbar_layout.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/hp/Documents/GitHub/Wash-Home/app/src/main/res/menu/courier_menu.xml" value="0.18385416666666668" />
       </map>
     </option>
   </component>

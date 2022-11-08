@@ -85,7 +85,9 @@ class BasketFragment : Fragment() {
         binding.emptyActionButton.setOnClickListener { navController.popBackStack() }
         binding.basketAddItemsLayout.setOnClickListener { navController.popBackStack() }
         binding.toolbarBackIcon.setOnClickListener { navController.popBackStack() }
-        binding.basketDeliveryButton.setOnClickListener { navController.navigate(BasketFragmentDirections.actionBasketFragmentToDeliveryInfoFragment()) }
+        binding.basketDeliveryButton.setOnClickListener {
+            navController.navigate(BasketFragmentDirections.actionBasketFragmentToDeliveryInfoFragment())
+        }
     }
 
     private fun getCart(){
@@ -112,6 +114,7 @@ class BasketFragment : Fragment() {
                     cart = response.body()!!.results
                     AppDefs.cartData = cart
                     binding.basketTotal.text = ""+cart.sub_total
+                    AppDefs.subTotal = cart.sub_total
                     if (cart.CartItem.size == 0){
                         binding.basketLayout.visibility = View.GONE
                         binding.emptyLayout.visibility = View.VISIBLE

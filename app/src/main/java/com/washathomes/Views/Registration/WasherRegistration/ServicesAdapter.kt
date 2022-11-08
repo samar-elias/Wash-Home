@@ -19,7 +19,7 @@ class ServicesAdapter(
     services: ArrayList<Service>
 ) :
     RecyclerView.Adapter<ServicesAdapter.ViewHolder>() {
-    lateinit var washerServicesDataFragment: WasherServicesDataFragment
+    var washerServicesDataFragment: WasherServicesDataFragment
     var selectedPosition = 0
     var context: Context? = null
     lateinit var services: ArrayList<Service>
@@ -35,20 +35,14 @@ class ServicesAdapter(
 
         if (service.isSelected!!){
             Glide.with(context!!).load(service.icon_selected).into(holder.serviceImage)
+            holder.serviceLayout.setBackgroundColor(context!!.resources.getColor(R.color.blue))
         }else{
             Glide.with(context!!).load(service.icon).into(holder.serviceImage)
+            holder.serviceLayout.setBackgroundColor(context!!.resources.getColor(R.color.light_grey))
         }
         holder.serviceTitle.text = service.title
         holder.serviceCV.setOnClickListener {
-            if (service.isSelected!!){
-                Glide.with(context!!).load(service.icon).into(holder.serviceImage)
-                service.isSelected = false
-                holder.serviceLayout.setBackgroundColor(context!!.resources.getColor(R.color.light_grey))
-            }else{
-                service.isSelected = true
-                holder.serviceLayout.setBackgroundColor(context!!.resources.getColor(R.color.blue))
-                Glide.with(context!!).load(service.icon_selected).into(holder.serviceImage)
-            }
+            service.isSelected = !service.isSelected!!
             notifyDataSetChanged()
         }
     }

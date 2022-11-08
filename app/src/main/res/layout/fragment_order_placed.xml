@@ -275,6 +275,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/order_placed_header" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cancel_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/order_placed_description"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_30sdp"
+                android:backgroundTint="@color/carnation"
+                android:text="@string/cancel_order"
+                android:textAllCaps="false"
+                android:fontFamily="@font/gotham_rounded_bold"
+                android:textSize="@dimen/_12ssp"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

@@ -113,7 +113,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:alpha="0.89"
-                        android:text="@string/washee"
+                        android:text="@string/washer"
                         android:textColor="@color/blue"
                         android:fontFamily="@font/gotham_rounded_bold"
                         android:textSize="@dimen/_12ssp"

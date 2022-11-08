@@ -21,6 +21,7 @@ public class AppDefs {
         var whiteLogo: String? = ""
         var background: String? = ""
         lateinit var user: UserData
+        var subTotal = ""
         lateinit var firebaseUser: FirebaseUser
         lateinit var deliveryInfo: DeliveryInfoObj
         lateinit var deliveryInfoPrices: ArrayList<DeliveryInfo>

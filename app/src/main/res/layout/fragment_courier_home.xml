@@ -58,7 +58,7 @@
             android:layout_marginTop="@dimen/_8sdp"
             android:layout_marginEnd="@dimen/_15sdp"
             android:alpha="0.5"
-            android:text="4 Completed orders"
+            android:text="@string/completed_orders"
             android:fontFamily="@font/gotham_rounded_book"
             android:textColor="@color/black"
             android:textSize="@dimen/_12ssp"

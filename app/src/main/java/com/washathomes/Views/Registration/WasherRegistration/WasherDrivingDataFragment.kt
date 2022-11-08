@@ -194,6 +194,7 @@ class WasherDrivingDataFragment : Fragment() {
             val intent = Intent(Intent.ACTION_PICK)
             intent.type = "image/*"
             startActivityForResult(intent, REQUEST_IMAGE_GALLERY)
+            alertBuilder.dismiss()
         }
 
     }

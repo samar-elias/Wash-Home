@@ -160,6 +160,7 @@ class ProfileDetailsFragment : Fragment() {
             val intent = Intent(Intent.ACTION_PICK)
             intent.type = "image/*"
             startActivityForResult(intent, REQUEST_IMAGE_GALLERY)
+            alertBuilder.dismiss()
         }
 
     }
@@ -193,6 +194,8 @@ class ProfileDetailsFragment : Fragment() {
             binding.birthdate.text = birthdate
 
         }, year, month, day)
+
+        dpd.datePicker.maxDate = System.currentTimeMillis()
 
         dpd.show()
     }

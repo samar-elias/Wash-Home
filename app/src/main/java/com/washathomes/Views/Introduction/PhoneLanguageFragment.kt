@@ -123,9 +123,14 @@ class PhoneLanguageFragment : Fragment() {
         var phoneNum = binding.phoneNumEdt.text.toString()
         if (phoneNum.isEmpty()){
             binding.phoneNumEdt.error = resources.getString(R.string.fill_feild)
-        }else if (!binding.termsPrivacyCB.isChecked){
+        }
+        else if (phoneNum.startsWith("0")){
+            Toast.makeText(introductionActivity, resources.getString(R.string.phone_starts_0), Toast.LENGTH_LONG).show()
+        }
+        else if (!binding.termsPrivacyCB.isChecked){
             Toast.makeText(introductionActivity, resources.getString(R.string.accept_terms), Toast.LENGTH_LONG).show()
-        }else{
+        }
+        else{
             phoneNum = binding.phoneCcp.selectedCountryCodeWithPlus+phoneNum
             navController.navigate(PhoneLanguageFragmentDirections.actionPhoneLanguageFragmentToVerificationFragment(phoneNum))
         }

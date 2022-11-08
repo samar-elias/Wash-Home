@@ -178,28 +178,6 @@ class VerificationFragment : Fragment() {
 //        Log.d("otpCode", verification.getSid())
     }
 
-    private fun login(){
-        val userParams = UserLogin(phoneNum, AppDefs.lang, token, "1")
-        val retrofit: Retrofit = Retrofit.Builder().baseUrl(Urls.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create()).build()
-        val loginCall: Call<UserData> =
-            retrofit.create(RetrofitAPIs::class.java).login(userParams)
-        loginCall.enqueue(object : Callback<UserData>{
-            override fun onResponse(call: Call<UserData>, response: Response<UserData>) {
-                binding.progressBar.visibility = View.GONE
-                if (response.isSuccessful){
-                    AppDefs.user = response.body()!!
-                    navController.navigate(VerificationFragmentDirections.actionVerificationFragmentToAccountTypesFragment())
-                }
-            }
-
-            override fun onFailure(call: Call<UserData>, t: Throwable) {
-                TODO("Not yet implemented")
-            }
-
-        })
-    }
-
     private fun verifyCode(code: String) {
         binding.progressBar.visibility = View.VISIBLE
         val credential = PhoneAuthProvider.getCredential(codeBySystem, code)
@@ -236,6 +214,28 @@ class VerificationFragment : Fragment() {
             .setCallbacks(mCallbacks) // OnVerificationStateChangedCallbacks
             .build()
         PhoneAuthProvider.verifyPhoneNumber(options)
+    }
+
+    private fun login(){
+        val userParams = UserLogin(phoneNum, AppDefs.lang, token, "1")
+        val retrofit: Retrofit = Retrofit.Builder().baseUrl(Urls.BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create()).build()
+        val loginCall: Call<UserData> =
+            retrofit.create(RetrofitAPIs::class.java).login(userParams)
+        loginCall.enqueue(object : Callback<UserData>{
+            override fun onResponse(call: Call<UserData>, response: Response<UserData>) {
+                binding.progressBar.visibility = View.GONE
+                if (response.isSuccessful){
+                    AppDefs.user = response.body()!!
+                    navController.navigate(VerificationFragmentDirections.actionVerificationFragmentToAccountTypesFragment())
+                }
+            }
+
+            override fun onFailure(call: Call<UserData>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+        })
     }
 
 

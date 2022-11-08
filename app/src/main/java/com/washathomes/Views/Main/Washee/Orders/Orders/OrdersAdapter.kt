@@ -33,6 +33,7 @@ class OrdersAdapter(
         holder.orderNo.text = "#"+order.id
         holder.price.text = ""+order.total_amount
         holder.orderStatus.text = order.status_title
+        holder.orderState.text = order.state_title
 
         if (order.status == "0" || order.status == "1"){
             holder.orderState.setTextColor(context!!.resources.getColor(R.color.mid_grey))

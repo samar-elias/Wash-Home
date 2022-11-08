@@ -10,12 +10,12 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/amount"
-        android:textSize="@dimen/_10ssp"
+        android:textSize="@dimen/_9ssp"
         android:fontFamily="@font/gotham_rounded_medium"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent=".25" />
+        app:layout_constraintWidth_percent=".3" />
 
     <TextView
         android:id="@+id/status"
@@ -23,12 +23,12 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/status"
-        android:textSize="@dimen/_10ssp"
+        android:textSize="@dimen/_9ssp"
         android:fontFamily="@font/gotham_rounded_medium"
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@id/amount"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent=".25" />
+        app:layout_constraintWidth_percent=".1" />
 
     <TextView
         android:id="@+id/order_no"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/order_number"
-        android:textSize="@dimen/_10ssp"
+        android:textSize="@dimen/_9ssp"
         android:fontFamily="@font/gotham_rounded_medium"
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@id/status"
@@ -49,11 +49,11 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/date_"
-        android:textSize="@dimen/_10ssp"
+        android:textSize="@dimen/_9ssp"
         android:fontFamily="@font/gotham_rounded_medium"
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@id/order_no"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent=".20" />
+        app:layout_constraintWidth_percent=".3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
