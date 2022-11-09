@@ -298,4 +298,17 @@
     <string name="order_deleted_successfully">Order deleted successfully!</string>
     <string name="phone_starts_0">Phone number can\'t start with 0 !</string>
     <string name="payments_received">Payments received</string>
+    <string name="order_no_prefix">Order #%s</string>
+    <string name="whoops_something_went_wrong">Something went wrong at our end, please try again</string>
+    <string name="chat_no_available">This conversation has ended due to finished order</string>
+    <string name="empty_inbox_title">No messages available</string>
+    <string name="empty_inbox_description">When you start your order, you’ll be able to connect with your Washer or Courier with any questions that occur during the process.</string>
+    <string name="try_again" />
+    <string name="close_button" />
+    <string name="error_unknown" />
+    <string name="please_check_your_network_connection_and_try_again" />
+    <string name="error_connection_not_found" />
+    <string name="buyer" />
+
+
 </resources>

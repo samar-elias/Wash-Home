@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/off_white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Views.Main.Washer.Home.OrderPlaced.OrderPlacedOverviewFragment">
+    tools:context=".views.main.washer.home.orderplaced.OrderPlacedOverviewFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_layout"
@@ -349,7 +349,7 @@
                             android:maxLines="5"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/completeBuyerNameText"
-                            tools:text="371 Burgers Road, East Ham London E6 2ET" 
+                            tools:text="371 Burgers Road, East Ham London E6 2ET"
                             android:fontFamily="@font/gotham_rounded_light"
                             android:textSize="@dimen/_10ssp"
                             android:textColor="@color/black"/>

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/washerHomeFragment"
-        android:name="com.washathomes.Views.Main.Washer.Home.WasherHomeFragment"
+        android:name="com.washathomes.views.main.washer.home.WasherHomeFragment"
         android:label="fragment_washer_home"
         tools:layout="@layout/fragment_washer_home" >
         <action
@@ -70,7 +70,7 @@
     </fragment>
     <fragment
         android:id="@+id/washerAvailabilityFragment"
-        android:name="com.washathomes.Views.Main.Washer.More.Availability.WasherAvailabilityFragment"
+        android:name="com.washathomes.views.main.washer.more.availability.WasherAvailabilityFragment"
         android:label="fragment_washer_availability"
         tools:layout="@layout/fragment_washer_availability" />
     <fragment
@@ -103,7 +103,7 @@
         tools:layout="@layout/fragment_washer_profile_details" />
     <fragment
         android:id="@+id/washerSwitchLanguageFragment"
-        android:name="com.washathomes.Views.Main.Washer.More.Profile.Language.WasherSwitchLanguageFragment"
+        android:name="com.washathomes.views.main.washer.more.profile.language.WasherSwitchLanguageFragment"
         android:label="fragment_washer_switch_language"
         tools:layout="@layout/fragment_washer_switch_language" />
     <fragment
@@ -123,17 +123,17 @@
     </fragment>
     <fragment
         android:id="@+id/pickupReturnFragment"
-        android:name="com.washathomes.Views.Main.Washer.More.Settings.PickupReturn.PickupReturnFragment"
+        android:name="com.washathomes.views.main.washer.more.settings.pickupreturn.PickupReturnFragment"
         android:label="fragment_pickup_return"
         tools:layout="@layout/fragment_pickup_return" />
     <fragment
         android:id="@+id/orderPlacedFragment"
-        android:name="com.washathomes.Views.Main.Washer.Home.OrderPlaced.OrderPlacedFragment"
+        android:name="com.washathomes.views.main.washer.home.orderplaced.OrderPlacedFragment"
         android:label="fragment_order_placed2"
         tools:layout="@layout/fragment_order_placed2" />
     <fragment
         android:id="@+id/orderPlacedOverviewFragment"
-        android:name="com.washathomes.Views.Main.Washer.Home.OrderPlaced.OrderPlacedOverviewFragment"
+        android:name="com.washathomes.views.main.washer.home.orderplaced.OrderPlacedOverviewFragment"
         android:label="fragment_order_placed_overview"
         tools:layout="@layout/fragment_order_placed_overview" >
         <argument
@@ -145,7 +145,7 @@
     </fragment>
     <fragment
         android:id="@+id/washerViewItemsFragment"
-        android:name="com.washathomes.Views.Main.Washer.Home.ViewItems.WasherViewItemsFragment"
+        android:name="com.washathomes.views.main.washer.home.viewitems.WasherViewItemsFragment"
         android:label="fragment_washer_view_items"
         tools:layout="@layout/fragment_washer_view_items" >
         <argument
@@ -160,10 +160,23 @@
         <action
             android:id="@+id/action_orderAcceptedFragment_to_washerViewItemsFragment"
             app:destination="@id/washerViewItemsFragment" />
+        <action
+            android:id="@+id/action_orderAcceptedFragment_to_washeeChatFragment2"
+            app:destination="@id/washeeChatFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/washerInboxFragment"
+        android:name="com.washathomes.Views.Main.Washee.Chats.WasheeChatsFragment"
+        android:label="fragment_washee_chats"
+        tools:layout="@layout/fragment_washee_chats" >
+
+        <action
+            android:id="@+id/action_washerInboxFragment_to_washeeChatFragment2"
+            app:destination="@id/washeeChatFragment2" />
     </fragment>
     <fragment
         android:id="@+id/orderInProgressFragment"
-        android:name="com.washathomes.Views.Main.Washer.Home.OrderInProgress.OrderInProgressFragment"
+        android:name="com.washathomes.views.main.washer.home.orderinprogress.OrderInProgressFragment"
         android:label="fragment_order_in_progress2"
         tools:layout="@layout/fragment_order_in_progress2" >
         <action
@@ -172,7 +185,7 @@
     </fragment>
     <fragment
         android:id="@+id/orderDeliveredFragment"
-        android:name="com.washathomes.Views.Main.Washer.Home.OrderDelivered.OrderDeliveredFragment"
+        android:name="com.washathomes.views.main.washer.home.orderdelivered.OrderDeliveredFragment"
         android:label="fragment_order_delivered"
         tools:layout="@layout/fragment_order_delivered" >
         <action
@@ -181,7 +194,7 @@
     </fragment>
     <fragment
         android:id="@+id/washerNotificationsFragment"
-        android:name="com.washathomes.Views.Main.Washer.Notifications.WasherNotificationsFragment"
+        android:name="com.washathomes.views.main.washer.notifications.WasherNotificationsFragment"
         android:label="fragment_washer_notifications"
         tools:layout="@layout/fragment_washer_notifications" />
     <fragment
@@ -214,12 +227,20 @@
     </fragment>
     <fragment
         android:id="@+id/washerViewOrderItemsFragment"
-        android:name="com.washathomes.Views.Main.Washer.More.OrderHistory.WasherViewOrderItemsFragment"
+        android:name="com.washathomes.views.main.washer.more.orderhistory.WasherViewOrderItemsFragment"
         android:label="fragment_washer_view_order_items"
         tools:layout="@layout/fragment_washer_view_order_items" />
     <fragment
         android:id="@+id/orderReviewFragment4"
-        android:name="com.washathomes.Views.Main.Washer.Home.OrderReview.OrderReviewFragment"
+        android:name="com.washathomes.views.main.washer.home.orderreview.OrderReviewFragment"
         android:label="fragment_order_review"
         tools:layout="@layout/fragment_order_review" />
+    <fragment
+        android:id="@+id/washeeChatFragment2"
+        android:name="com.washathomes.Views.Main.Washee.Chats.WasheeChatFragment"
+        android:label="WasheeChatFragment" >
+        <argument
+            android:name="chat"
+            app:argType="com.washathomes.AppUtils.Modules.chatmodel.ChatRoom"/>
+    </fragment>
 </navigation>

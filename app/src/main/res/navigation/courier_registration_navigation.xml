@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/courierIntroFragment"
-        android:name="com.washathomes.Views.Registration.CourierRegistration.CourierIntroFragment"
+        android:name="com.washathomes.views.registration.courierregistration.CourierIntroFragment"
         android:label="fragment_courier_intro"
         tools:layout="@layout/fragment_courier_intro" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/courierSignUpFragment"
-        android:name="com.washathomes.Views.Registration.CourierRegistration.CourierSignUpFragment"
+        android:name="com.washathomes.views.registration.courierregistration.CourierSignUpFragment"
         android:label="fragment_courier_sign_up"
         tools:layout="@layout/fragment_courier_sign_up" >
         <action

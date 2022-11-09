@@ -27,6 +27,16 @@
             app:destination="@id/orderInProgressFragment3" />
     </fragment>
     <fragment
+        android:id="@+id/courierInboxFragment"
+        android:name="com.washathomes.Views.Main.Washee.Chats.WasheeChatsFragment"
+        android:label="fragment_washee_chats"
+        tools:layout="@layout/fragment_washee_chats" >
+
+        <action
+            android:id="@+id/action_courierInboxFragment_to_washeeChatFragment3"
+            app:destination="@id/washeeChatFragment3" />
+    </fragment>
+    <fragment
         android:id="@+id/orderPlacedFragment2"
         android:name="com.washathomes.Views.Main.Courier.Home.OrderPlaced.OrderPlacedFragment"
         android:label="fragment_order_placed3"
@@ -107,7 +117,7 @@
         tools:layout="@layout/fragment_courier_availability" />
     <fragment
         android:id="@+id/settingsFragment2"
-        android:name="com.washathomes.Views.Main.Courier.More.Settings.SettingsFragment"
+        android:name="com.washathomes.views.main.courier.more.settings.SettingsFragment"
         android:label="fragment_settings2"
         tools:layout="@layout/fragment_settings2" >
         <action
@@ -119,7 +129,7 @@
     </fragment>
     <fragment
         android:id="@+id/courierOrderHistoryFragment"
-        android:name="com.washathomes.Views.Main.Courier.More.OrderHistory.CourierOrderHistoryFragment"
+        android:name="com.washathomes.views.main.courier.more.orderhistory.CourierOrderHistoryFragment"
         android:label="fragment_courier_order_history"
         tools:layout="@layout/fragment_courier_order_history" >
         <action
@@ -128,7 +138,7 @@
     </fragment>
     <fragment
         android:id="@+id/webViewFragment2"
-        android:name="com.washathomes.Views.Main.Courier.More.WebView.WebViewFragment"
+        android:name="com.washathomes.views.main.courier.more.webView.WebViewFragment"
         android:label="fragment_web_view2"
         tools:layout="@layout/fragment_web_view2" >
         <argument
@@ -137,7 +147,7 @@
     </fragment>
     <fragment
         android:id="@+id/courierNotificationsFragment"
-        android:name="com.washathomes.Views.Main.Courier.Notifications.CourierNotificationsFragment"
+        android:name="com.washathomes.views.main.courier.notifications.CourierNotificationsFragment"
         android:label="fragment_courier_notifications"
         tools:layout="@layout/fragment_courier_notifications" />
     <fragment
@@ -151,9 +161,13 @@
     </fragment>
     <fragment
         android:id="@+id/orderInProgressFragment3"
-        android:name="com.washathomes.Views.Main.Courier.Home.OrderInProgress.OrderInProgressFragment"
+        android:name="com.washathomes.views.main.courier.home.orderInprogress.OrderInProgressFragment"
         android:label="fragment_order_in_progress3"
-        tools:layout="@layout/fragment_order_in_progress3" />
+        tools:layout="@layout/fragment_order_in_progress3" >
+        <action
+            android:id="@+id/action_orderInProgressFragment3_to_washeeChatFragment3"
+            app:destination="@id/washeeChatFragment3" />
+    </fragment>
     <fragment
         android:id="@+id/orderReviewFragment3"
         android:name="com.washathomes.Views.Main.Courier.Home.OrderReview.OrderReviewFragment"
@@ -166,7 +180,7 @@
         tools:layout="@layout/fragment_courier_switch_language" />
     <fragment
         android:id="@+id/courierProfileDetailsFragment"
-        android:name="com.washathomes.Views.Main.Courier.More.Profile.ProfileDetails.CourierProfileDetailsFragment"
+        android:name="com.washathomes.views.main.courier.more.profile.profiledetails.CourierProfileDetailsFragment"
         android:label="fragment_courier_profile_details"
         tools:layout="@layout/fragment_courier_profile_details" />
     <fragment
@@ -176,12 +190,12 @@
         tools:layout="@layout/fragment_courier_switch_account" />
     <fragment
         android:id="@+id/courierIdentificationFragment"
-        android:name="com.washathomes.Views.Main.Courier.More.Settings.Identification.CourierIdentificationFragment"
+        android:name="com.washathomes.views.main.courier.more.settings.identification.CourierIdentificationFragment"
         android:label="fragment_courier_identification"
         tools:layout="@layout/fragment_courier_identification" />
     <fragment
         android:id="@+id/deliveryServiceFragment"
-        android:name="com.washathomes.Views.Main.Courier.More.Settings.DeliveryService.DeliveryServiceFragment"
+        android:name="com.washathomes.views.main.courier.more.settings.deliveryservice.DeliveryServiceFragment"
         android:label="fragment_delivery_service"
         tools:layout="@layout/fragment_delivery_service" />
     <fragment
@@ -198,5 +212,13 @@
         android:name="com.washathomes.Views.Main.Courier.More.OrderHistory.CourierViewItemsFragment"
         android:label="fragment_courier_view_items"
         tools:layout="@layout/fragment_courier_view_items" />
+    <fragment
+        android:id="@+id/washeeChatFragment3"
+        android:name="com.washathomes.Views.Main.Washee.Chats.WasheeChatFragment"
+        android:label="WasheeChatFragment" >
+        <argument
+            android:name="chat"
+            app:argType="com.washathomes.AppUtils.Modules.chatmodel.ChatRoom"/>
+    </fragment>
 
 </navigation>

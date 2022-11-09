@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/basketFragment"
-        android:name="com.washathomes.Views.Main.Washee.Checkout.Basket.BasketFragment"
+        android:name="com.washathomes.views.main.washee.checkout.basket.BasketFragment"
         android:label="fragment_basket"
         tools:layout="@layout/fragment_basket" >
         <action
@@ -35,7 +35,7 @@
     </fragment>
     <fragment
         android:id="@+id/overviewFragment"
-        android:name="com.washathomes.Views.Main.Washee.Checkout.Overview.OverviewFragment"
+        android:name="com.washathomes.views.main.washee.checkout.overview.OverviewFragment"
         android:label="fragment_overview"
         tools:layout="@layout/fragment_overview" >
         <action
@@ -112,7 +112,7 @@
         tools:layout="@layout/fragment_language_selection" />
     <fragment
         android:id="@+id/orderHistoryFragment"
-        android:name="com.washathomes.Views.Main.Washee.More.OrderHistory.OrderHistoryFragment"
+        android:name="com.washathomes.views.main.washee.more.orderhistory.OrderHistoryFragment"
         android:label="fragment_order_history"
         tools:layout="@layout/fragment_order_history" >
         <action
@@ -130,7 +130,7 @@
     </fragment>
     <fragment
         android:id="@+id/orderDetailsFragment"
-        android:name="com.washathomes.Views.Main.Washee.More.OrderHistory.OrderDetailsFragment"
+        android:name="com.washathomes.views.main.washee.more.orderhistory.OrderDetailsFragment"
         android:label="fragment_order_details"
         tools:layout="@layout/fragment_order_details" >
         <action
@@ -139,7 +139,7 @@
     </fragment>
     <fragment
         android:id="@+id/viewOrderItemsFragment"
-        android:name="com.washathomes.Views.Main.Washee.More.OrderHistory.ViewOrderItemsFragment"
+        android:name="com.washathomes.views.main.washee.more.orderhistory.ViewOrderItemsFragment"
         android:label="fragment_view_order_items"
         tools:layout="@layout/fragment_view_order_items" />
     <fragment
@@ -176,6 +176,9 @@
         android:name="com.washathomes.Views.Main.Washee.Orders.Confirmed.OrderConfirmedFragment"
         android:label="fragment_order_confirmed"
         tools:layout="@layout/fragment_order_confirmed" >
+        <argument
+            android:name="order"
+            app:argType="com.washathomes.AppUtils.Modules.chatmodel.Order" />
         <action
             android:id="@+id/action_orderConfirmedFragment_to_washeeChatFragment2"
             app:destination="@id/washeeChatFragment" />
@@ -185,6 +188,9 @@
         android:name="com.washathomes.Views.Main.Washee.Orders.Progress.OrderInProgressFragment"
         android:label="fragment_order_in_progress"
         tools:layout="@layout/fragment_order_in_progress" >
+        <argument
+            android:name="order"
+            app:argType="com.washathomes.AppUtils.Modules.chatmodel.Order" />
         <action
             android:id="@+id/action_orderInProgressFragment2_to_washeeChatFragment"
             app:destination="@id/washeeChatFragment" />
@@ -200,7 +206,7 @@
     </fragment>
     <fragment
         android:id="@+id/washeeNotificationsFragment"
-        android:name="com.washathomes.Views.Main.Washee.Notifications.WasheeNotificationsFragment"
+        android:name="com.washathomes.views.main.washee.notifications.WasheeNotificationsFragment"
         android:label="fragment_washee_notifications"
         tools:layout="@layout/fragment_washee_notifications" />
     <fragment
@@ -224,8 +230,8 @@
         android:label="fragment_washee_chat"
         tools:layout="@layout/fragment_washee_chat" >
         <argument
-            android:name="userToken"
-            app:argType="string" />
+            android:name="chat"
+            app:argType="com.washathomes.AppUtils.Modules.chatmodel.ChatRoom"/>
     </fragment>
     <fragment
         android:id="@+id/orderReviewFragment"
