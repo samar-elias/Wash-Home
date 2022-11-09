@@ -4,7 +4,7 @@ data class UserLogin(val phone: String?, val language_code: String?, val fcm_tok
 data class UserData(val token: String?, val results: User?)
 data class User (val id: String?, val name: String?, val email:String?, val phone: String?,
         val gender: String?, val birthdate: String?, val image: String?, val id_image: String?,
-        val sigup_type: String?, val washee_status: String?, val washer_status: String?, val courier_status: String?,
+        var sigup_type: String?, val washee_status: String?, val washer_status: String?, val courier_status: String?,
         var washer_available: String?, val express: String?, var dreiver_available: String?, val dreiver_type: String?,
         val dreiver_miles: String?, val language_code: String?, val date_created: String?, val modified_date: String?,
         val sign_date: String?, val countryId: String?, val latitude: String?, val longitude: String?, val address: String?,
